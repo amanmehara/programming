@@ -1,8 +1,8 @@
+import java.util.Scanner;
+
 /**
  * Created by @amanmehara on 15/03/2017.
  */
-import java.util.Scanner;
-
 public class ConsoleInput {
     public static void main(String[] args) {
         Scanner consoleInput = new Scanner(System.in);
