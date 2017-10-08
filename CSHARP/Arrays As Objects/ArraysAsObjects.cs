@@ -8,7 +8,7 @@ namespace Programming
         {
 
             int[] numbersArray = { 1, 2, 3, 4, 5 };
-            Console.WriteLine("numbersArray :");
+            Console.WriteLine("numbersArray:");
             foreach (int i in numbersArray)
             {
                 Console.WriteLine(i);
