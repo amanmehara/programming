@@ -1,6 +1,3 @@
-/**
-  * Created by @amanmehara on 15/03/2017.
-  */
 object CreateList {
 
   //A list with 4 items
@@ -8,7 +5,7 @@ object CreateList {
 
   def main(args: Array[String]): Unit = {
     //Print all 4 items of the list
-    numberList.foreach((x:Any) => println(x))
+    numberList.foreach((x: Any) => println(x))
   }
 
 }

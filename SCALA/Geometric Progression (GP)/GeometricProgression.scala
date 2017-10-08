@@ -1,9 +1,6 @@
-/**
-  * Created by @amanmehara on 24-09-2017.
-  */
 object GeometricProgression {
 
-  def geometricProgression (terms: Int): (Double, Double) => Option[List[BigDecimal]] = {
+  def geometricProgression(terms: Int): (Double, Double) => Option[List[BigDecimal]] = {
     (firstTerm, commonRatio) => {
       commonRatio match {
         case 0 => None

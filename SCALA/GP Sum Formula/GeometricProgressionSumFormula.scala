@@ -1,9 +1,6 @@
-/**
-  * Created by @amanmehara on 24-09-2017.
-  */
 object GeometricProgressionSumFormula {
 
-  def geometricProgressionSumFormula (terms: Int): (Double, Double) => Option[BigDecimal] = {
+  def geometricProgressionSumFormula(terms: Int): (Double, Double) => Option[BigDecimal] = {
     (firstTerm, commonRatio) => {
       commonRatio match {
         case 0 => None
