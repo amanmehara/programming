@@ -1,0 +1,16 @@
+Features:
+	Makes Following Calculations
+BMI (Body Mass Index) 
+It is calculated using D. R. Miller formula which is as follows:
+	Weight (kg) / (height (m)) 2
+Percentage of Fat in body
+To calculate it app uses formula derived by Deurenberg and co-workers given below:
+	(1.20 * BMI) + (0.23 * Age) - (10.8 * gender) - 5.4
+Where gender is considered 1 for males and 0 for females.
+
+Ideal weight a person should have
+It is given by following formula:
+For Males:
+	56.2 + (1.41*(inches over\below 5 ft)
+For Females:
+	53.1 + (1.36*(inches over\below 5 ft)
