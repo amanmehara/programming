@@ -1,19 +1,19 @@
-        function bubbleSort(a)
+        function bubbleSort(a)                                  // Creating a Function named 'bubblesort' with array in paramaters
         {
-            for(var m=0;m<a.length;m++)
+            for(var m=0;m<a.length;m++)                         //looping for each element in the array [Start to End]
             {
-                for(var i=0;i<a.length-m-1;i++)
+                for(var i=0;i<a.length-m-1;i++)             //looping from each element in the array [Start to Current Element of 1st Loop]
                     {
-                        if(a[i]>a[i+1])
+                        if(a[i]>a[i+1])                         // Check: Weather Next Element is smaller then current element 
                         {
                             a[i]=a[i]+a[i+1];
-                            a[i+1]=a[i]-a[i+1];
+                            a[i+1]=a[i]-a[i+1];                 // Swapping of current element and next element
                             a[i]=a[i]-a[i+1];
                         }
                     }
             }
-        return a;
+        return a;                                                               // returning the ascending order sorted array.
         }
-        var a= [5,4,3,2,1];
-        console.log("Elements Before Bubble sort-->",a);
-        console.log("Elements After Bubble Sort-->",bubbleSort(a));
+        var a= [5,4,3,2,1];                                                     //Defining array
+        console.log("Elements Before Bubble sort-->",a);                        //printing original array   
+        console.log("Elements After Bubble Sort-->",bubbleSort(a));             //calling and printing sorted array
