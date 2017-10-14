@@ -1,8 +1,3 @@
-/**
- * Created by NafisaBarlaskar on 14-10-2017.
- */
-package LeetCode;
-
 import java.util.HashMap;
 
 /**
