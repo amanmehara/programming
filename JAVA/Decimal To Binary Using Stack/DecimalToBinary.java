@@ -4,16 +4,16 @@ public class DecimalToBinary {
 
     public static void main(String[] args) {
         
-        Stack stk= new Stack();
+        Stack stk = new Stack();
         Scanner scn = new Scanner(System.in);
         
-        System.out.println("Wellcome to Programme - Decimal To Binary Using Stack \n\nEnter a Decimal Number : ");
+        System.out.println("Enter a Decimal Number : ");
         int number = scn.nextInt(); // Getting an integer from user
         
         for(int x = number ; x != 0; x = x/2) {
             stk.push(x%2);
         }
-        System.out.print("Binary number equal to " + number + " : ");
+        System.out.print("Binary number equals to " + number + " : ");
         while(!stk.isEmpty()) {
             System.out.print(stk.pop().data);
         }
@@ -61,9 +61,13 @@ class Stack {
     }
     
     public Node pop () {
-        Node removed=top;
-        top=top.next;
-        return removed;
+        if(!isEmpty()) {
+            Node removed=top;
+            top=top.next;
+            return removed;
+        }
+        else 
+            return null;
     }
     
     public Node peek () {
