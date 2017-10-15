@@ -1,0 +1,49 @@
+body {
+}
+
+a {
+    color: yellow;
+    text-decoration: none;
+}
+
+#toBeAnimated {
+    color: white;
+    background-color: purple;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: lighter;
+    font-size: xx-large;
+    position: absolute;
+    padding: 8px;
+}
+
+#animate {
+    color: white;
+    background-color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: lighter;
+    font-size: xx-large;
+    margin: 16px auto;
+    padding: 4px 32px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+#animate:hover {
+    background-color: gray;
+}
+
+#stopAnimation {
+    color: white;
+    background-color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: lighter;
+    font-size: xx-large;
+    margin: 16px;
+    padding: 4px 32px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+#stopAnimation:hover {
+    background-color: gray;
+}

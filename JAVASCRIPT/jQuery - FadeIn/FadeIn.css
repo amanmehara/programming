@@ -1,0 +1,26 @@
+body {
+}
+
+#toBeFadedIn {
+    background-color: orange;
+    width: 320px;
+    height: 96px;
+    display: none;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#fadeIn {
+    color: white;
+    background-color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: lighter;
+    font-size: xx-large;
+    padding: 4px 32px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+#fadeIn:hover {
+    background-color: gray;
+}

@@ -1,0 +1,25 @@
+body {
+}
+
+#toBeFadedTo {
+    background-color: red;
+    width: 320px;
+    height: 96px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#fadeTo {
+    color: white;
+    background-color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: lighter;
+    font-size: xx-large;
+    padding: 4px 32px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+#fadeTo:hover {
+    background-color: gray;
+}
