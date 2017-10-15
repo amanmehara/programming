@@ -28,9 +28,12 @@ public class SelectionSort {
                     .reduce(j, (left, right) -> array[right] < array[left] ? right : left);
 
             if (iMin != j) {
+
+                // Swap (array[iMin], array[j])
                 int temp = array[iMin];
                 array[iMin] = array[j];
                 array[j] = temp;
+
             }
 
         });
