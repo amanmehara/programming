@@ -37,8 +37,9 @@ public class DirectedGraph<V> {
     public Set<V> neighbours(V vertex) {
         if (adjacencyList.containsKey(vertex)) {
             return adjacencyList.get(vertex);
+        } else {
+            throw new IllegalStateException("Vertex not found in the Graph.");
         }
-        throw new IllegalStateException("Vertex not found in the Graph.");
     }
 
     public void addVertex(V vertex) {
@@ -55,8 +56,9 @@ public class DirectedGraph<V> {
     public void addEdge(V source, V target) {
         if (adjacencyList.containsKey(source) && adjacencyList.containsKey(target)) {
             adjacencyList.get(source).add(target);
+        } else {
+            throw new IllegalStateException("Vertex not found in the Graph.");
         }
-        throw new IllegalStateException("Vertex not found in the Graph.");
     }
 
     public void removeEdge(V source, V target) {

@@ -29,15 +29,15 @@ public class BreadthFirstTraversal<V> {
         final Queue<V> queue = new PriorityQueue<>();
 
         queue.add(vertex);
+        visited.add(vertex);
 
         while (!queue.isEmpty()) {
 
             V s = queue.remove();
 
-            visited.add(s);
-
             graph.adjacencyList().get(s).forEach(v -> {
                 if (!visited.contains(v)) {
+                    visited.add(v);
                     queue.add(v);
                 }
             });
