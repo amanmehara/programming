@@ -26,6 +26,10 @@ public class DirectedGraph<V> {
         this.adjacencyList = new HashMap<>();
     }
 
+    public Map<V, Set<V>> adjacencyList() {
+        return adjacencyList;
+    }
+
     public boolean adjacent(V source, V target) {
         return adjacencyList.containsKey(source) && adjacencyList.get(source).contains(target);
     }
