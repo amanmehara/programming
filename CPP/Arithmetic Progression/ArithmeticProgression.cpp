@@ -2,7 +2,7 @@
 
 double arithmeticProgression(double firstTerm, double commonDifference, int numberOfTerms)
 {
-    return firstTerm + numberOfTerms * commonDifference;
+    return firstTerm + commonDifference * (numberOfTerms - 1);
 }
 
 int main()
@@ -22,7 +22,7 @@ int main()
 
     for(int termIndex = 0; termIndex < numberOfTerms; termIndex++)
     {
-        std::cout << arithmeticProgression(firstTerm, commonDifference, termIndex) << std::endl;
+        std::cout << arithmeticProgression(firstTerm, commonDifference, termIndex + 1) << std::endl;
     }
 
     return 0;
