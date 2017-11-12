@@ -21,19 +21,21 @@
 
 using namespace std;
 
-class QuickUnion {
+class WeightedQuickUnion {
 
 private:
 
 	int count_;
 	vector<int> parents_;
+	vector<int> size_;
 
 public:
 
-	QuickUnion(int n) {
+	WeightedQuickUnion(int n) {
 		count_ = n;
 		for (int i = 0; i < n; i++) {
 			parents_.push_back(i);
+			size_.push_back(1);
 		}
 	}
 
@@ -44,7 +46,14 @@ public:
 
 		if (parent_p == parent_q) return;
 
-		parents_[parent_p] = parent_q;
+		if (size_[parents_[p] < size_[parents_[q]]]) {
+			parents_[parent_p] = parent_q;
+			size_[parent_q] += size_[parent_p];
+		}
+		else {
+			parents_[parent_q] = parent_p;
+			size_[parent_p] += size_[parent_q];
+		}
 
 		count_--;
 

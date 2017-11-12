@@ -28,32 +28,30 @@ private:
 	int count_;
 	vector<int> identifiers_;
 
-	vector<int> MakeSet(int n) {
-		vector<int> identifiers(n);
-		for (int i = 0; i < n; i++) {
-			identifiers[i] = i;
-		}
-		return identifiers;
-	}
-
 public:
 
 	QuickFind(int n) {
 		count_ = n;
-		identifiers_ = MakeSet(n);
+		for (int i = 0; i < n; i++) {
+			identifiers_.push_back(i);
+		}
 	}
 
 	void Union(int p, int q) {
-		if (identifiers_[p] != identifiers_[q]) {
-			int identifier_p = identifiers_[p];
-			int identifier_q = identifiers_[q];
-			for (int i = 0; i < identifiers_.size(); i++) {
-				if (identifiers_[i] == identifier_p) {
-					identifiers_[i] = identifier_q;
-				}
+
+		int identifier_p = identifiers_[p];
+		int identifier_q = identifiers_[q];
+
+		if (identifier_p == identifier_q) return;
+
+		for (int i = 0; i < identifiers_.size(); i++) {
+			if (identifiers_[i] == identifier_p) {
+				identifiers_[i] = identifier_q;
 			}
-			count_--;
 		}
+
+		count_--;
+
 	}
 
 	int Find(int p) {
