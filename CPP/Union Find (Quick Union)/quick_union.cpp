@@ -21,12 +21,12 @@
 
 using namespace std;
 
-class QuickFind {
+class QuickUnion {
 
 private:
 
 	int count_;
-	vector<int> identifiers_;
+	vector<int> parents_;
 
 	vector<int> MakeSet(int n) {
 		vector<int> identifiers(n);
@@ -38,30 +38,31 @@ private:
 
 public:
 
-	QuickFind(int n) {
+	QuickUnion(int n) {
 		count_ = n;
-		identifiers_ = MakeSet(n);
+		parents_ = MakeSet(n);
 	}
 
 	void Union(int p, int q) {
-		if (identifiers_[p] != identifiers_[q]) {
-			int identifier_p = identifiers_[p];
-			int identifier_q = identifiers_[q];
-			for (int i = 0; i < identifiers_.size(); i++) {
-				if (identifiers_[i] == identifier_p) {
-					identifiers_[i] = identifier_q;
-				}
-			}
+		int parent_p = Find(p);
+		int parent_q = Find(q);
+		if (parent_p != parent_q) {
+			parents_[parent_p] = parent_q;
 			count_--;
 		}
 	}
 
 	int Find(int p) {
-		return identifiers_[p];
+		if (parents_[p] != p) {
+			return Find(parents_[p]);
+		}
+		else {
+			return parents_[p];
+		}
 	}
 
 	bool Connected(int p, int q) {
-		return identifiers_[p] == identifiers_[q];
+		return Find(p) == Find(q);
 	}
 
 	int Count() {
