@@ -21,21 +21,25 @@
 
 using namespace std;
 
-class WeightedQuickUnion {
+/*
+ Weighted Quick Union by Rank with Path Compression by Halving
+ */
+
+class UnionFind {
 
 private:
 
 	int count_;
 	vector<int> parents_;
-	vector<int> size_;
+	vector<int> rank_;
 
 public:
 
-	WeightedQuickUnion(int n) {
+	UnionFind(int n) {
 		count_ = n;
 		for (int i = 0; i < n; i++) {
 			parents_.push_back(i);
-			size_.push_back(1);
+			rank_.push_back(0);
 		}
 	}
 
@@ -46,13 +50,15 @@ public:
 
 		if (parent_p == parent_q) return;
 
-		if (size_[parents_[p]] < size_[parents_[q]]) {
+		if (rank_[parents_[p]] < rank_[parents_[q]]) {
 			parents_[parent_p] = parent_q;
-			size_[parent_q] += size_[parent_p];
+		}
+		else if (rank_[parents_[p]] > rank_[parents_[q]]){
+			parents_[parent_q] = parent_p;
 		}
 		else {
 			parents_[parent_q] = parent_p;
-			size_[parent_p] += size_[parent_q];
+			rank_[parent_p]++;
 		}
 
 		count_--;
@@ -61,7 +67,7 @@ public:
 
 	int Find(int p) {
 		if (parents_[p] != p) {
-			return Find(parents_[p]);
+			parents_[p] = Find(parents_[p]);
 		}
 		return parents_[p];
 	}
