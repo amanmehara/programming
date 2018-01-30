@@ -50,8 +50,8 @@ public:
 	void RemoveVertex(int vertex) {
 		if (adjacency_list_.count(vertex)) {
 			adjacency_list_.erase(vertex);
-			for (unordered_map<int, unordered_set<int>>::iterator it = adjacency_list_.begin(); it != adjacency_list_.end(); it++) {
-				it->second.erase(vertex);
+			for (pair<int, unordered_set<int>> entry : adjacency_list_) {
+				entry.second.erase(vertex);
 			}
 		}
 	}
