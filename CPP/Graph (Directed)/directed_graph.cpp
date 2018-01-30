@@ -16,59 +16,50 @@
 
  */
 
-#include <algorithm>
+#include  "directed_graph.h"
+
 #include <stdexcept>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
 
-using namespace std;
+bool DirectedGraph::Adjacent(int source_vertex, int target_vertex) {
+	return adjacency_list_.count(source_vertex) && adjacency_list_.find(source_vertex)->second.count(target_vertex);
+}
 
-class DirectedGraph {
-
-	unordered_map<int, unordered_set<int>> adjacency_list_;
-
-public:
-
-	bool Adjacent(int source_vertex, int target_vertex) {
-		return adjacency_list_.count(source_vertex) && adjacency_list_.find(source_vertex)->second.count(target_vertex);
+unordered_set<int> DirectedGraph::Neighbours(int vertex) {
+	if (adjacency_list_.count(vertex)) {
+		return adjacency_list_.find(vertex)->second;
 	}
-
-	unordered_set<int> Neighbours(int vertex) {
-		if (adjacency_list_.count(vertex)) {
-			return adjacency_list_.find(vertex)->second;
-		}
-		else {
-			throw invalid_argument("Vertex not found in the Graph.");
-		}
+	else {
+		throw invalid_argument("Vertex not found in the Graph.");
 	}
+}
 
-	void AddVertex(int vertex) {
-		adjacency_list_.insert(make_pair<>(vertex, unordered_set<int>()));
-	}
+void DirectedGraph::AddVertex(int vertex) {
+	adjacency_list_.insert(make_pair<>(vertex, unordered_set<int>()));
+}
 
-	void RemoveVertex(int vertex) {
-		if (adjacency_list_.count(vertex)) {
-			adjacency_list_.erase(vertex);
-			for (pair<int, unordered_set<int>> entry : adjacency_list_) {
-				entry.second.erase(vertex);
-			}
+void DirectedGraph::RemoveVertex(int vertex) {
+	if (adjacency_list_.count(vertex)) {
+		adjacency_list_.erase(vertex);
+		for (pair<int, unordered_set<int>> entry : adjacency_list_) {
+			entry.second.erase(vertex);
 		}
 	}
+}
 
-	void AddEdge(int source_vertex, int target_vertex) {
-		if (adjacency_list_.count(source_vertex) && adjacency_list_.count(target_vertex)) {
-			adjacency_list_.find(source_vertex)->second.insert(target_vertex);
-		}
-		else {
-			throw invalid_argument("Vertex not found in the Graph.");
-		}
+void DirectedGraph::AddEdge(int source_vertex, int target_vertex) {
+	if (adjacency_list_.count(source_vertex) && adjacency_list_.count(target_vertex)) {
+		adjacency_list_.find(source_vertex)->second.insert(target_vertex);
 	}
-
-	void RemoveEdge(int source_vertex, int target_vertex) {
-		if (adjacency_list_.count(source_vertex)) {
-			adjacency_list_.find(source_vertex)->second.erase(target_vertex);
-		}
+	else {
+		throw invalid_argument("Vertex not found in the Graph.");
 	}
+}
 
-};
+void DirectedGraph::RemoveEdge(int source_vertex, int target_vertex) {
+	if (adjacency_list_.count(source_vertex)) {
+		adjacency_list_.find(source_vertex)->second.erase(target_vertex);
+	}
+}
