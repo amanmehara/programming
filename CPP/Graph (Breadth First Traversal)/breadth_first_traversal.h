@@ -16,32 +16,17 @@
 
  */
 
-#ifndef MEHARA_DIRECTED_GRAPH_H_
-#define MEHARA_DIRECTED_GRAPH_H_
+#ifndef MEHARA_BREADTH_FIRST_TRAVERSAL_H_
+#define MEHARA_BREADTH_FIRST_TRAVERSAL_H_
 
-#include <unordered_map>
-#include <unordered_set>
+#include "directed_graph.h"
 
-using namespace std;
-
-class DirectedGraph {
-
-	unordered_map<int, unordered_set<int>> adjacency_list_;
+class BreadthFirstTraversal {
 
 public:
 
-	bool Adjacent(int source_vertex, int target_vertex);
-
-	unordered_set<int> Neighbours(int vertex);
-
-	void AddVertex(int vertex);
-
-	void RemoveVertex(int vertex);
-
-	void AddEdge(int source_vertex, int target_vertex);
-
-	void RemoveEdge(int source_vertex, int target_vertex);
+	void traverse(DirectedGraph directed_graph, int source_vertex);
 
 };
 
-#endif  // MEHARA_DIRECTED_GRAPH_H_
+#endif  // MEHARA_BREADTH_FIRST_TRAVERSAL_H_
