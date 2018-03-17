@@ -20,13 +20,13 @@
 
 #include "activity.h"
 
-class GreedyIterativeActivitySelection {
+class GreedyIterativeActivitySelector {
 
 	std::vector<Activity> activities_;
 
 public:
 
-	GreedyIterativeActivitySelection(std::vector<Activity> activities) {
+	GreedyIterativeActivitySelector(std::vector<Activity> activities) {
 		activities_ = activities;
 	}
 
