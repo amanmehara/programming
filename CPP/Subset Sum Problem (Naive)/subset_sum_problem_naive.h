@@ -18,6 +18,20 @@
 
 #include <vector>
 
-bool SubsetSum(std::vector<int>& set, int elements, int sum);
+class SubsetSumProblem {
+
+	std::vector<int> set_;
+
+	bool SubsetSum(int elements, int sum);
+
+public:
+
+	SubsetSumProblem(std::vector<int>& set) {
+		set_ = set;
+	}
+
+	bool SubsetSum(int sum);
+
+};
 
 #endif  // MEHARA_SUBSET_SUM_PROBLEM_NAIVE_H_

@@ -13,28 +13,24 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-#include "subset_sum_problem_naive.h"
+#ifndef MEHARA_SUBSET_SUM_PROBLEM_H_
+#define MEHARA_SUBSET_SUM_PROBLEM_H_
 
 #include <vector>
 
-bool SubsetSumProblem::SubsetSum(int elements, int sum) {
+class SubsetSumProblem {
 
-	if (!sum) {
-		return true;
+	std::vector<int> set_;
+
+	bool SubsetSum(int elements, int sum);
+
+public:
+
+	SubsetSumProblem(std::vector<int>& set) {
+		set_ = set;
 	}
 
-	if (elements <= 0 || sum < 0) {
-		return false;
-	}
+	bool SubsetSum(int sum);
 
-	return SubsetSum(elements - 1, sum) || SubsetSum(elements - 1, sum - set_[elements - 1]);
-
-}
-
-bool SubsetSumProblem::SubsetSum(int sum) {
-
-	int set_size = static_cast<int>(set_.size());
-
-	return SubsetSum(set_size, sum);
-
-}
+};
+#endif  // MEHARA_SUBSET_SUM_PROBLEM_H_

@@ -13,21 +13,32 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-#include "subset_sum_problem_naive.h"
+#include "subset_sum_problem_tabulation.h"
 
 #include <vector>
 
 bool SubsetSumProblem::SubsetSum(int elements, int sum) {
 
-	if (!sum) {
-		return true;
+	std::vector<std::vector<bool>> table(elements + 1, std::vector<bool>(sum + 1, false));
+
+	for (int i = 0; i <= elements; i++) {
+		table[i][0] = true;
 	}
 
-	if (elements <= 0 || sum < 0) {
-		return false;
+	for (int element_index = 1; element_index <= elements; element_index++) {
+		for (int sum_index = 1; sum_index <= sum; sum_index++) {
+			bool sum_excluding_current = table[element_index - 1][sum_index];
+
+			bool sum_including_current = false;
+			if (sum_index >= set_[element_index - 1]) {
+				sum_including_current = table[element_index - 1][sum_index - set_[element_index - 1]];
+			}
+
+			table[element_index][sum_index] = sum_excluding_current || sum_including_current;
+		}
 	}
 
-	return SubsetSum(elements - 1, sum) || SubsetSum(elements - 1, sum - set_[elements - 1]);
+	return table[elements][sum];
 
 }
 

@@ -16,12 +16,14 @@ Data Source for Programming App
 * Max-Priority Queue (Naive - Unsorted)
 * Min-Priority Queue (Naive - Unsorted)
 * Partition Problem (Naive)
+* Partition Problem (Tabulation)
 * Polynomials (Horner's Method)
 * Queue (Linked List)
 * Reverse (A Number)
 * Sorting (Top Down Merge Sort)
 * Stack (Linked List)
 * Subset Sum Problem (Naive)
+* Subset Sum Problem (Tabulation)
 * The Coin Change Problem (Naive)
 * The Coin Change Problem
 * The Minimal C++ Program
