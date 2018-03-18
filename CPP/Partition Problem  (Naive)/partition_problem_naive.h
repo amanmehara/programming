@@ -22,7 +22,7 @@ class PartitionProblem {
 
 	std::vector<int> set_;
 
-	bool Partition(int elements, int sum);
+	bool SubsetSum(int elements, int sum);
 
 public:
 

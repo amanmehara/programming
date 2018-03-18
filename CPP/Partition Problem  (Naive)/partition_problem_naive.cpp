@@ -17,7 +17,7 @@
 
 #include <vector>
 
-bool PartitionProblem::Partition(int elements, int sum) {
+bool PartitionProblem::SubsetSum(int elements, int sum) {
 
 	if (!sum) {
 		return true;
@@ -27,7 +27,7 @@ bool PartitionProblem::Partition(int elements, int sum) {
 		return false;
 	}
 
-	return Partition(elements - 1, sum) || Partition(elements - 1, sum - set_[elements - 1]);
+	return SubsetSum(elements - 1, sum) || SubsetSum(elements - 1, sum - set_[elements - 1]);
 
 }
 
@@ -44,6 +44,6 @@ bool PartitionProblem::Partition() {
 		return false;
 	}
 
-	return Partition(set_size, sum / 2);
+	return SubsetSum(set_size, sum / 2);
 
 }
