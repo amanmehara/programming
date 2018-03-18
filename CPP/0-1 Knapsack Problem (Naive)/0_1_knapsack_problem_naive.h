@@ -24,7 +24,7 @@ class ZeroOneKnapsackProblem {
 
 	std::vector<Item> items_;
 
-	int MaximumValue(int item, int weight);
+	int MaximumValue(int items, int weight);
 
 public:
 
