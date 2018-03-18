@@ -3,31 +3,31 @@ Data Source for Programming App
 
 ## C++
 
-* Activity Selector (Greedy Iterative)
-* Arithmetic Progression
-* Geometric Progression
-* Graph (Breadth First Traversal)
-* Graph (Depth First  Traversal)
-* Graph (Directed)
-* Hello World
-* Longest Common Subsequence (Length)
-* Longest Common Subsequence (Naive)
-* Longest Common Subsequence
-* Max-Priority Queue (Naive - Unsorted)
-* Min-Priority Queue (Naive - Unsorted)
-* Partition Problem (Naive)
-* Partition Problem (Tabulation)
-* Polynomials (Horner's Method)
-* Queue (Linked List)
-* Reverse (A Number)
-* Sorting (Top Down Merge Sort)
-* Stack (Linked List)
-* Subset Sum Problem (Naive)
-* Subset Sum Problem (Tabulation)
-* The Coin Change Problem (Naive)
-* The Coin Change Problem
-* The Minimal C++ Program
-* Union Find
-* Union Find (Quick Find)
-* Union Find (Quick Union)
-* Union Find (Weighted Quick Union)
+1. Activity Selector (Greedy Iterative)
+1. Arithmetic Progression
+1. Geometric Progression
+1. Graph (Breadth First Traversal)
+1. Graph (Depth First  Traversal)
+1. Graph (Directed)
+1. Hello World
+1. Longest Common Subsequence (Length)
+1. Longest Common Subsequence (Naive)
+1. Longest Common Subsequence
+1. Max-Priority Queue (Naive - Unsorted)
+1. Min-Priority Queue (Naive - Unsorted)
+1. Partition Problem (Naive)
+1. Partition Problem (Tabulation)
+1. Polynomials (Horner's Method)
+1. Queue (Linked List)
+1. Reverse (A Number)
+1. Sorting (Top Down Merge Sort)
+1. Stack (Linked List)
+1. Subset Sum Problem (Naive)
+1. Subset Sum Problem (Tabulation)
+1. The Coin Change Problem (Naive)
+1. The Coin Change Problem
+1. The Minimal C++ Program
+1. Union Find
+1. Union Find (Quick Find)
+1. Union Find (Quick Union)
+1. Union Find (Weighted Quick Union)
