@@ -3,6 +3,7 @@ Data Source for Programming App
 
 ## C++
 
+1. 0-1 Knapsack Problem (Naive)
 1. Activity Selector (Greedy Iterative)
 1. Arithmetic Progression
 1. Geometric Progression
