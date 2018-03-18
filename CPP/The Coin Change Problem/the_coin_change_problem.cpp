@@ -19,16 +19,16 @@
 
 int CoinChangeCombinations(std::vector<int> coin_denominations, int amount) {
 
-    int coin_denominations_size = static_cast<int>(coin_denominations.size());
+	int coin_denominations_size = static_cast<int>(coin_denominations.size());
 
-    std::vector<std::vector<int>> table(coin_denominations_size, std::vector<int>(amount + 1, 0));
+	std::vector<std::vector<int>> table(coin_denominations_size, std::vector<int>(amount + 1, 0));
 
 	for (int i = 0; i < coin_denominations_size; i++) {
 		table[i][0] = 1;
 	}
 
-    for(int i = 0; i < coin_denominations_size; i++) {
-        for(int j = 1; j <= amount; j++) {
+	for (int i = 0; i < coin_denominations_size; i++) {
+		for (int j = 1; j <= amount; j++) {
 
 			int combinations_excluding_current = 0;
 			if (i > 0) {
@@ -42,9 +42,9 @@ int CoinChangeCombinations(std::vector<int> coin_denominations, int amount) {
 
 			table[i][j] = combinations_excluding_current + combinations_including_current;
 
-        }
-    }
+		}
+	}
 
-    return table[coin_denominations_size -  1][amount];
+	return table[coin_denominations_size - 1][amount];
 
 }
