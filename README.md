@@ -12,6 +12,7 @@ Data Source for Programming App
 * Hello World
 * Longest Common Subsequence
 * Longest Common Subsequence (Length)
+* Longest Common Subsequence (Naive)
 * Max-Priority Queue (Naive - Unsorted)
 * Min-Priority Queue (Naive - Unsorted)
 * Polynomials (Horner's Method)
