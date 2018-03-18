@@ -10,6 +10,7 @@ Data Source for Programming App
 * Graph (Depth First  Traversal)
 * Graph (Directed)
 * Hello World
+* Longest Common Subsequence
 * Longest Common Subsequence (Length)
 * Max-Priority Queue (Naive - Unsorted)
 * Min-Priority Queue (Naive - Unsorted)
