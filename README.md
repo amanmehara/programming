@@ -10,9 +10,9 @@ Data Source for Programming App
 * Graph (Depth First  Traversal)
 * Graph (Directed)
 * Hello World
-* Longest Common Subsequence
 * Longest Common Subsequence (Length)
 * Longest Common Subsequence (Naive)
+* Longest Common Subsequence
 * Max-Priority Queue (Naive - Unsorted)
 * Min-Priority Queue (Naive - Unsorted)
 * Polynomials (Horner's Method)
@@ -21,6 +21,7 @@ Data Source for Programming App
 * Sorting (Top Down Merge Sort)
 * Stack (Linked List)
 * The Coin Change Problem (Naive)
+* The Coin Change Problem
 * The Minimal C++ Program
 * Union Find
 * Union Find (Quick Find)
