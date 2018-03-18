@@ -19,6 +19,7 @@ Data Source for Programming App
 * Reverse (A Number)
 * Sorting (Top Down Merge Sort)
 * Stack (Linked List)
+* The Coin Change Problem (Naive)
 * The Minimal C++ Program
 * Union Find
 * Union Find (Quick Find)
