@@ -17,8 +17,8 @@
 
 #include <vector>
 
-int CoinChangeCombinations(std::vector<int>& coin_denominations, int coins, int amount)
-{
+int TheCoinChangeProblem::Combinations(int coins, int amount) {
+
 	if (amount == 0) {
 		return 1;
 	}
@@ -27,9 +27,18 @@ int CoinChangeCombinations(std::vector<int>& coin_denominations, int coins, int 
 		return 0;
 	}
 
-	int combinations_excluding_current = CoinChangeCombinations(coin_denominations, coins - 1, amount);
-	int combinations_including_current = CoinChangeCombinations(coin_denominations, coins, amount - coin_denominations[coins - 1]);
+	int combinations_excluding_current = Combinations(coins - 1, amount);
+	int combinations_including_current = Combinations(coins, amount - coin_denominations_[coins - 1]);
 
 	return combinations_excluding_current + combinations_including_current;
+
+}
+
+int TheCoinChangeProblem::Combinations(int amount)
+{
+
+	int coins = static_cast<int>(coin_denominations_.size());
+
+	return Combinations(coins, amount);
 
 }

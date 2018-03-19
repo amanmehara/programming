@@ -18,6 +18,20 @@
 
 #include <vector>
 
-int CoinChangeCombinations(std::vector<int>& coin_denominations, int coins, int amount);
+class TheCoinChangeProblem {
+
+	std::vector<int> coin_denominations_;
+
+	int Combinations(int coins, int amount);
+
+public:
+
+	TheCoinChangeProblem(std::vector<int> coin_denominations) {
+		coin_denominations_ = coin_denominations;
+	}
+
+	int Combinations(int amount);
+
+};
 
 #endif  // MEHARA_THE_COIN_CHANGE_PROBLEM_NAIVE_H_
