@@ -11,6 +11,7 @@ Data Source for Programming App
 1. Graph (Breadth First Traversal)
 1. Graph (Depth First  Traversal)
 1. Graph (Directed)
+1. Hamming Distance
 1. Hello World
 1. Levenshtein Distance (Naive)
 1. Levenshtein Distance (Tabulation)
