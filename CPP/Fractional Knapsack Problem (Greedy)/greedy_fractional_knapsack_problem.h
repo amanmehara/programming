@@ -13,22 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef MEHARA_0_1_KNAPSACK_PROBLEM_NAIVE_H_
-#define MEHARA_0_1_KNAPSACK_PROBLEM_NAIVE_H_
+#ifndef MEHARA_GREEDY_FRACTIONAL_KNAPSACK_PROBLEM_H_
+#define MEHARA_GREEDY_FRACTIONAL_KNAPSACK_PROBLEM_H_
 
 #include <vector>
 
 #include "item.h"
 
-class ZeroOneKnapsackProblem {
+class GreedyFractionalKnapsackProblem {
 
 	std::vector<Item> items_;
 
-	int MaximumValue(int items, int weight);
-
 public:
 
-	ZeroOneKnapsackProblem(std::vector<Item>& items) {
+	GreedyFractionalKnapsackProblem(std::vector<Item> items) {
 		items_ = items;
 	}
 
@@ -36,4 +34,4 @@ public:
 
 };
 
-#endif  // MEHARA_0_1_KNAPSACK_PROBLEM_NAIVE_H_
+#endif  // MEHARA_GREEDY_FRACTIONAL_KNAPSACK_PROBLEM_H_
