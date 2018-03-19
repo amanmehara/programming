@@ -13,6 +13,7 @@ Data Source for Programming App
 1. Graph (Directed)
 1. Hello World
 1. Levenshtein Distance (Naive)
+1. Levenshtein Distance (Tabulation)
 1. Longest Common Subsequence (Length)
 1. Longest Common Subsequence (Naive)
 1. Longest Common Subsequence
