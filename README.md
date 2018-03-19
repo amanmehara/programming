@@ -27,7 +27,7 @@ Data Source for Programming App
 1. Subset Sum Problem (Naive)
 1. Subset Sum Problem (Tabulation)
 1. The Coin Change Problem (Naive)
-1. The Coin Change Problem
+1. The Coin Change Problem (Tabulation)
 1. The Minimal C++ Program
 1. Union Find
 1. Union Find (Quick Find)
