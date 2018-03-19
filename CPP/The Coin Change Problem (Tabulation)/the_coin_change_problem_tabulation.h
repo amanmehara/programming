@@ -13,11 +13,25 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-#ifndef MEHARA_THE_COIN_CHANGE_PROBLEM_H_
-#define MEHARA_THE_COIN_CHANGE_PROBLEM_H_
+#ifndef MEHARA_THE_COIN_CHANGE_TABULATION_H_
+#define MEHARA_THE_COIN_CHANGE_TABULATION_H_
 
 #include <vector>
 
-int CoinChangeCombinations(std::vector<int> coin_denominations, int amount);
+class TheCoinChangeProblem {
 
-#endif  // MEHARA_THE_COIN_CHANGE_PROBLEM_H_
+	std::vector<int> coin_denominations_;
+
+	int Combinations(int coins, int amount);
+
+public:
+
+	TheCoinChangeProblem(std::vector<int> coin_denominations) {
+		coin_denominations_ = coin_denominations;
+	}
+
+	int Combinations(int amount);
+
+};
+
+#endif  // MEHARA_THE_COIN_CHANGE_TABULATION_H_

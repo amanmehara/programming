@@ -13,13 +13,13 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-#include "the_coin_change_problem.h"
+#include "the_coin_change_problem_tabulation.h"
 
 #include <vector>
 
-int CoinChangeCombinations(std::vector<int> coin_denominations, int amount) {
+int TheCoinChangeProblem::Combinations(int coins, int amount) {
 
-	int coin_denominations_size = static_cast<int>(coin_denominations.size());
+	int coin_denominations_size = static_cast<int>(coin_denominations_.size());
 
 	std::vector<std::vector<int>> table(coin_denominations_size, std::vector<int>(amount + 1, 0));
 
@@ -36,8 +36,8 @@ int CoinChangeCombinations(std::vector<int> coin_denominations, int amount) {
 			}
 
 			int combinations_including_current = 0;
-			if (j >= coin_denominations[i]) {
-				combinations_including_current = table[i][j - coin_denominations[i]];
+			if (j >= coin_denominations_[i]) {
+				combinations_including_current = table[i][j - coin_denominations_[i]];
 			}
 
 			table[i][j] = combinations_excluding_current + combinations_including_current;
@@ -46,5 +46,14 @@ int CoinChangeCombinations(std::vector<int> coin_denominations, int amount) {
 	}
 
 	return table[coin_denominations_size - 1][amount];
+
+}
+
+int TheCoinChangeProblem::Combinations(int amount)
+{
+
+	int coins = static_cast<int>(coin_denominations_.size());
+
+	return Combinations(coins, amount);
 
 }
