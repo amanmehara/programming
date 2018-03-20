@@ -36,3 +36,24 @@ Data Source for Programming App
 1. Union Find (Quick Find)
 1. Union Find (Quick Union)
 1. Union Find (Weighted Quick Union)
+
+## Scala
+
+1. AP Sum
+1. AP Sum Formula
+1. Arithmetic Progression (AP)
+1. Create List
+1. Factorial
+1. Geometric Progression (GP)
+1. GP Infinite Sum Formula
+1. GP Sum
+1. GP Sum Formula
+1. Hello World
+1. Linear Search
+1. Nth Fibonacci
+1. Sequence Maximum
+1. Sequence Maximum (Reduction)
+1. Sequence Minimum
+1. Sequence Minimum (Reduction)
+1. Sequence Sum
+1. Sequence Sum (Reduction)
