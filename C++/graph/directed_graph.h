@@ -19,32 +19,32 @@
 #include <unordered_set>
 
 template <class T>
-class DirectedGraph {
-
+class directed_graph {
   public:
-    bool Adjacent(T source_vertex, T target_vertex);
+    bool adjacent(T source_vertex, T target_vertex);
 
-    std::unordered_set<T> Neighbours(T vertex);
+    std::unordered_set<T> neighbors(T vertex);
 
-    void AddVertex(T vertex);
+    void add_vertex(T vertex);
 
-    void RemoveVertex(T vertex);
+    void remove_vertex(T vertex);
 
-    void AddEdge(T source_vertex, T target_vertex);
+    void add_edge(T source_vertex, T target_vertex);
 
-    void RemoveEdge(T source_vertex, T target_vertex);
+    void remove_edge(T source_vertex, T target_vertex);
 
   private:
     std::unordered_map<T, std::unordered_set<T>> adjacency_list_;
 };
 
 template <class T>
-bool DirectedGraph<T>::Adjacent(T source_vertex, T target_vertex) {
-    return adjacency_list_.count(source_vertex) && adjacency_list_.find(source_vertex)->second.count(target_vertex);
+bool directed_graph<T>::adjacent(T source_vertex, T target_vertex) {
+    return adjacency_list_.count(source_vertex) &&
+           adjacency_list_.find(source_vertex)->second.count(target_vertex);
 }
 
 template <class T>
-std::unordered_set<T> DirectedGraph<T>::Neighbours(T vertex) {
+std::unordered_set<T> directed_graph<T>::neighbors(T vertex) {
     if (adjacency_list_.count(vertex)) {
         return adjacency_list_.find(vertex)->second;
     } else {
@@ -53,12 +53,12 @@ std::unordered_set<T> DirectedGraph<T>::Neighbours(T vertex) {
 }
 
 template <class T>
-void DirectedGraph<T>::AddVertex(T vertex) {
+void directed_graph<T>::add_vertex(T vertex) {
     adjacency_list_.insert(std::make_pair<>(vertex, std::unordered_set<T>()));
 }
 
 template <class T>
-void DirectedGraph<T>::RemoveVertex(T vertex) {
+void directed_graph<T>::remove_vertex(T vertex) {
     if (adjacency_list_.count(vertex)) {
         adjacency_list_.erase(vertex);
         for (std::pair<T, std::unordered_set<T>> entry : adjacency_list_) {
@@ -68,8 +68,9 @@ void DirectedGraph<T>::RemoveVertex(T vertex) {
 }
 
 template <class T>
-void DirectedGraph<T>::AddEdge(T source_vertex, T target_vertex) {
-    if (adjacency_list_.count(source_vertex) && adjacency_list_.count(target_vertex)) {
+void directed_graph<T>::add_edge(T source_vertex, T target_vertex) {
+    if (adjacency_list_.count(source_vertex) &&
+        adjacency_list_.count(target_vertex)) {
         adjacency_list_.find(source_vertex)->second.insert(target_vertex);
     } else {
         throw std::invalid_argument("Vertex not found in the Graph.");
@@ -77,7 +78,7 @@ void DirectedGraph<T>::AddEdge(T source_vertex, T target_vertex) {
 }
 
 template <class T>
-void DirectedGraph<T>::RemoveEdge(T source_vertex, T target_vertex) {
+void directed_graph<T>::remove_edge(T source_vertex, T target_vertex) {
     if (adjacency_list_.count(source_vertex)) {
         adjacency_list_.find(source_vertex)->second.erase(target_vertex);
     }
