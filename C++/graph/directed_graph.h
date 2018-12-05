@@ -18,8 +18,10 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "graph.h"
+
 template <class T>
-class directed_graph {
+class directed_graph : public graph<T> {
   public:
     bool adjacent(T source_vertex, T target_vertex);
 
