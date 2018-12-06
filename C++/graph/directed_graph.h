@@ -23,17 +23,17 @@
 template <class T>
 class directed_graph : public graph<T> {
   public:
-    bool adjacent(T source_vertex, T target_vertex);
+    bool adjacent(T source_vertex, T target_vertex) override;
 
-    std::unordered_set<T> neighbors(T vertex);
+    std::unordered_set<T> neighbors(T vertex) override;
 
-    void add_vertex(T vertex);
+    void add_vertex(T vertex) override;
 
-    void remove_vertex(T vertex);
+    void remove_vertex(T vertex) override;
 
-    void add_edge(T source_vertex, T target_vertex);
+    void add_edge(T source_vertex, T target_vertex) override;
 
-    void remove_edge(T source_vertex, T target_vertex);
+    void remove_edge(T source_vertex, T target_vertex) override;
 
   private:
     std::unordered_map<T, std::unordered_set<T>> adjacency_list_;
