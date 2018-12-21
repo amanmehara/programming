@@ -12,17 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <string>
+#include <vector>
 
-std::string reverse_string(std::string str) {
-    int left_index = 0;
-    int right_index = str.size() - 1;
-    while (left_index < right_index) {
-        auto t = str[left_index];
-        str[left_index] = str[right_index];
-        str[right_index] = t;
-        left_index++;
-        right_index--;
+bool can_jump(const std::vector<int>& numbers) {
+    int current_good_index = numbers.size() - 1;
+    for (int index = numbers.size() - 1; index >= 0; index--) {
+        if (index + numbers[index] >= current_good_index) {
+            current_good_index = index;
+        }
     }
-    return str;
+    return current_good_index == 0;
 }

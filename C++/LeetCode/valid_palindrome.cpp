@@ -16,22 +16,22 @@
 #include <string>
 
 bool is_palindrome(std::string str) {
-    int left_idx = 0;
-    int right_idx = str.size() - 1;
+    int left_index = 0;
+    int right_index = str.size() - 1;
 
-    while (left_idx < right_idx) {
-        while (left_idx < right_idx && !std::isalnum(str[left_idx])) {
-            left_idx++;
+    while (left_index < right_index) {
+        while (left_index < right_index && !std::isalnum(str[left_index])) {
+            left_index++;
         }
-        while (left_idx < right_idx && !std::isalnum(str[right_idx])) {
-            right_idx--;
+        while (left_index < right_index && !std::isalnum(str[right_index])) {
+            right_index--;
         }
-        if (left_idx < right_idx &&
-            std::tolower(str[left_idx]) != std::tolower(str[right_idx])) {
+        if (left_index < right_index &&
+            std::tolower(str[left_index]) != std::tolower(str[right_index])) {
             return false;
         }
-        left_idx++;
-        right_idx--;
+        left_index++;
+        right_index--;
     }
 
     return true;
