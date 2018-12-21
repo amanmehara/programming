@@ -12,27 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <cctype>
 #include <string>
 
-bool is_palindrome(std::string str) {
+std::string reverse_string(std::string str) {
     int left_idx = 0;
     int right_idx = str.size() - 1;
-
     while (left_idx < right_idx) {
-        while (left_idx < right_idx && !std::isalnum(str[left_idx])) {
-            left_idx++;
-        }
-        while (left_idx < right_idx && !std::isalnum(str[right_idx])) {
-            right_idx--;
-        }
-        if (left_idx < right_idx &&
-            std::tolower(str[left_idx]) != std::tolower(str[right_idx])) {
-            return false;
-        }
+        auto t = str[left_idx];
+        str[left_idx] = str[right_idx];
+        str[right_idx] = t;
         left_idx++;
         right_idx--;
     }
-
-    return true;
+    return str;
 }
