@@ -16,7 +16,7 @@
 #include <string>
 #include <vector>
 
-int evaluate_reverse_polish_notation(std::vector<std::string>& tokens) {
+int evaluate_reverse_polish_notation(const std::vector<std::string>& tokens) {
     std::stack<int> operand_stack;
     for (const auto& token : tokens) {
         if (token == "+" || token == "-" || token == "*" || token == "/") {

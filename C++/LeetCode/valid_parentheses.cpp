@@ -15,7 +15,7 @@
 #include <stack>
 #include <string>
 
-bool is_valid(std::string& parentheses) {
+bool is_valid(const std::string& parentheses) {
     std::stack<char> parenthesis_stack;
     for (const auto& parenthesis : parentheses) {
         if (parenthesis == '(' || parenthesis == '{' || parenthesis == '[') {

@@ -15,7 +15,7 @@
 #include <cctype>
 #include <string>
 
-bool is_palindrome(std::string str) {
+bool is_palindrome(const std::string& str) {
     int left_index = 0;
     int right_index = str.size() - 1;
 
