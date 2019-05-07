@@ -20,14 +20,14 @@ namespace mehara::sort {
 
 void insertion_sort(std::vector<double>& array) {
 
-    for (size_t outer_idx = 2; outer_idx < array.size(); outer_idx++) {
-        double key = array[outer_idx];
-        size_t inner_idx = outer_idx - 1;
-        while (inner_idx > 0 && array[inner_idx] > key) {
+    for (auto outer_idx = 1; outer_idx < array.size(); outer_idx++) {
+        auto key = array[outer_idx];
+        auto inner_idx = outer_idx - 1;
+        while (inner_idx >= 0 && array[inner_idx] > key) {
             array[inner_idx + 1] = array[inner_idx];
             inner_idx = inner_idx - 1;
         }
-        array[inner_idx] = key;
+        array[inner_idx + 1] = key;
     }
 }
 
