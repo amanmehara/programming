@@ -1,6 +1,4 @@
 # programming-app-data
-Data Source for Programming App.
-
 A polyglot collection of algorithms and code snippets.
 
 ## Programming languages
