@@ -14,13 +14,18 @@
  * limitations under the License.
  */
 
-#ifndef MEHARA_C_AREA_H_
-#define MEHARA_C_AREA_H_
+#include "area.h"
 
-double area_circle(double radius);
+#include <math.h>
 
-double area_square(double side);
+double area_circle(double radius) {
+    return M_PI * pow(radius, 2.0);
+}
 
-double area_rectangle(double length, double width);
+double area_square(double side) {
+    return pow(side, 2.0);
+}
 
-#endif // MEHARA_C_AREA_H_
+double area_rectangle(double length, double width) {
+    return length * width;
+}

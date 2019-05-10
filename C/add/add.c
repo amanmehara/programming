@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
-#ifndef MEHARA_C_AREA_H_
-#define MEHARA_C_AREA_H_
+#include "add.h"
 
-double area_circle(double radius);
+double add2(double number1, double number2) {
+    return number1 + number2;
+}
 
-double area_square(double side);
-
-double area_rectangle(double length, double width);
-
-#endif // MEHARA_C_AREA_H_
+double addN(double* numbers, int size) {
+    double sum = 0.0;
+    for (int idx = 0; idx < size; idx++) {
+        sum += *(numbers + idx);
+    }
+    return sum;
+}
