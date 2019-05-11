@@ -12,12 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_ARITHMETIC_PROGRESSION_H_
-#define MEHARA_ARITHMETIC_PROGRESSION_H_
+#include "reverse.h"
 
-#include <vector>
+namespace mehara::mathematics {
 
-std::vector<double> geometric_progression(
-    double first_term, double common_ratio, int terms);
+int reverse(int number) {
+    int reverse = 0;
+    while (number) {
+        reverse = reverse * 10 + number % 10;
+        number = number / 10;
+    }
+    return reverse;
+}
 
-#endif // MEHARA_ARITHMETIC_PROGRESSION_H_
+} // namespace mehara::mathematics

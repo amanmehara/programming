@@ -12,12 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_GEOMETRIC_PROGRESSION_H_
-#define MEHARA_GEOMETRIC_PROGRESSION_H_
+#include "arithmetic_progression.h"
 
+#include <stdexcept>
 #include <vector>
 
-std::vector<double> geometric_progression(
-    double first_term, double common_ratio, int terms);
+namespace mehara::mathematics {
 
-#endif // MEHARA_GEOMETRIC_PROGRESSION_H_
+std::vector<double> arithmetic_progression(double first_term, double common_difference, int terms) {
+    if (terms < 1) {
+        throw std::domain_error("terms < 1");
+    }
+
+    std::vector<double> progression;
+    for (auto term_idx = 0; term_idx < terms; term_idx++) {
+        progression.push_back(first_term + common_difference * term_idx);
+    }
+
+    return progression;
+}
+
+} // namespace mehara::mathematics

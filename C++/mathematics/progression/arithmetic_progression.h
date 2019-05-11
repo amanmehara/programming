@@ -12,21 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_STACK_H_
-#define MEHARA_STACK_H_
+#ifndef MEHARA_ARITHMETIC_PROGRESSION_H_
+#define MEHARA_ARITHMETIC_PROGRESSION_H_
 
-template <class T>
-class stack {
-  public:
-    virtual void push(T element) = 0;
+#include <vector>
 
-    virtual T pop() = 0;
+namespace mehara::mathematics {
 
-    virtual bool empty() = 0;
+std::vector<double> arithmetic_progression(double first_term, double common_difference, int terms);
 
-    virtual int size() = 0;
+} // namespace mehara::mathematics
 
-    virtual ~stack() {}
-};
-
-#endif // MEHARA_STACK_H_
+#endif // MEHARA_ARITHMETIC_PROGRESSION_H_

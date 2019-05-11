@@ -12,21 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_STACK_H_
-#define MEHARA_STACK_H_
+#include <iostream>
 
-template <class T>
-class stack {
-  public:
-    virtual void push(T element) = 0;
+namespace mehara::language {
 
-    virtual T pop() = 0;
+void hello_world() {
+    std::cout << "Hello World!" << std::endl;
+}
 
-    virtual bool empty() = 0;
-
-    virtual int size() = 0;
-
-    virtual ~stack() {}
-};
-
-#endif // MEHARA_STACK_H_
+} // namespace mehara::language

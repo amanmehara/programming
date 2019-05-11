@@ -12,10 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <iostream>
+#ifndef MEHARA_HELLO_WORLD_H_
+#define MEHARA_HELLO_WORLD_H_
 
-int main()
-{
-    std::cout << "Hello World!" << std::endl;
-    return 0;
-}
+namespace mehara::language {
+
+void hello_world();
+
+} // namespace mehara::language
+
+#endif // MEHARA_HELLO_WORLD_H_

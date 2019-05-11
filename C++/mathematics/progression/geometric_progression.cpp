@@ -12,21 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_STACK_H_
-#define MEHARA_STACK_H_
+#include "geometric_progression.h"
 
-template <class T>
-class stack {
-  public:
-    virtual void push(T element) = 0;
+#include <cmath>
+#include <stdexcept>
+#include <vector>
 
-    virtual T pop() = 0;
+namespace mehara::mathematics {
 
-    virtual bool empty() = 0;
+std::vector<double> geometric_progression(double first_term, double common_ratio, int terms) {
+    if (terms < 1) {
+        throw std::domain_error("terms < 1");
+    }
 
-    virtual int size() = 0;
+    std::vector<double> progression;
+    for (auto term_idx = 0; term_idx < terms; term_idx++) {
+        progression.push_back(first_term * std::pow(common_ratio, term_idx));
+    }
 
-    virtual ~stack() {}
-};
+    return progression;
+}
 
-#endif // MEHARA_STACK_H_
+} // namespace mehara::mathematics

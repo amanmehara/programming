@@ -12,21 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_STACK_H_
-#define MEHARA_STACK_H_
+#ifndef MEHARA_REVERSE_H_
+#define MEHARA_REVERSE_H_
 
-template <class T>
-class stack {
-  public:
-    virtual void push(T element) = 0;
+namespace mehara::mathematics {
 
-    virtual T pop() = 0;
+int reverse(int number);
 
-    virtual bool empty() = 0;
+} // namespace mehara::mathematics
 
-    virtual int size() = 0;
-
-    virtual ~stack() {}
-};
-
-#endif // MEHARA_STACK_H_
+#endif // MEHARA_REVERSE_H_
