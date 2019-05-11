@@ -23,31 +23,31 @@ void merge(std::vector<double>& array, int begin, int middle, int end) {
 
     auto left_size = middle - begin + 1;
     std::vector<double> left(left_size + 1);
-    auto left_idx = 0;
-    while (left_idx < left.size() - 1) {
-        left[left_idx] = array[begin + left_idx];
-        left_idx++;
+    auto left_index = 0;
+    while (left_index < left.size() - 1) {
+        left[left_index] = array[begin + left_index];
+        left_index++;
     }
-    left[left_idx] = std::numeric_limits<double>::max();
+    left[left_index] = std::numeric_limits<double>::max();
 
     auto right_size = end - middle;
     std::vector<double> right(right_size + 1);
-    auto right_idx = 0;
-    while (right_idx < right.size() - 1) {
-        right[right_idx] = array[middle + right_idx + 1];
-        right_idx++;
+    auto right_index = 0;
+    while (right_index < right.size() - 1) {
+        right[right_index] = array[middle + right_index + 1];
+        right_index++;
     }
-    right[right_idx] = std::numeric_limits<double>::max();
+    right[right_index] = std::numeric_limits<double>::max();
 
-    left_idx = 0;
-    right_idx = 0;
-    for (auto idx = begin; idx <= end; idx++) {
-        if (left[left_idx] <= right[right_idx]) {
-            array[idx] = left[left_idx];
-            left_idx++;
+    left_index = 0;
+    right_index = 0;
+    for (auto index = begin; index <= end; index++) {
+        if (left[left_index] <= right[right_index]) {
+            array[index] = left[left_index];
+            left_index++;
         } else {
-            array[idx] = right[right_idx];
-            right_idx++;
+            array[index] = right[right_index];
+            right_index++;
         }
     }
 }

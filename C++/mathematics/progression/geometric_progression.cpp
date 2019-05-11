@@ -26,8 +26,8 @@ std::vector<double> geometric_progression(double first_term, double common_ratio
     }
 
     std::vector<double> progression;
-    for (auto term_idx = 0; term_idx < terms; term_idx++) {
-        progression.push_back(first_term * std::pow(common_ratio, term_idx));
+    for (auto term_index = 0; term_index < terms; term_index++) {
+        progression.push_back(first_term * std::pow(common_ratio, term_index));
     }
 
     return progression;

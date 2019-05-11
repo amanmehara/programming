@@ -22,8 +22,8 @@ double add2(double number1, double number2) {
 
 double addN(double* numbers, int size) {
     double sum = 0.0;
-    for (int idx = 0; idx < size; idx++) {
-        sum += *(numbers + idx);
+    for (int index = 0; index < size; index++) {
+        sum += *(numbers + index);
     }
     return sum;
 }

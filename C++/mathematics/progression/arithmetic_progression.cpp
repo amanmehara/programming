@@ -25,8 +25,8 @@ std::vector<double> arithmetic_progression(double first_term, double common_diff
     }
 
     std::vector<double> progression;
-    for (auto term_idx = 0; term_idx < terms; term_idx++) {
-        progression.push_back(first_term + common_difference * term_idx);
+    for (auto term_index = 0; term_index < terms; term_index++) {
+        progression.push_back(first_term + common_difference * term_index);
     }
 
     return progression;
