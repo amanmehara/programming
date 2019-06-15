@@ -12,17 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <algorithm>
-
 struct node {
-    int data;
-    node* left;
-    node* right;
+    int value;
+    node* next;
 };
 
-int maximum_depth(node* root) {
-    if (root == nullptr) {
-        return 0;
+bool has_cycle(node* head) {
+    node* tortoise = head;
+    node* hare = head;
+    while (hare != nullptr) {
+        tortoise = tortoise->next;
+        hare = hare->next;
+        if (hare == nullptr) {
+            break;
+        }
+        hare = hare->next;
+        if (tortoise == hare) {
+            return true;
+        }
     }
-    return 1 + std::max(maximum_depth(root->left), maximum_depth(root->right));
+    return false;
 }
