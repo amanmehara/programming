@@ -17,7 +17,7 @@
 
 std::vector<std::string> fizz_buzz(int n) {
     std::vector<std::string> fizz_buzz;
-    for (int i = 1; i <= n; i++) {
+    for (auto i = 1; i <= n; i++) {
         std::string str;
 
         if (i % 3 == 0) {
