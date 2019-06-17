@@ -15,8 +15,8 @@
 #include <vector>
 
 bool can_jump(const std::vector<int>& numbers) {
-    int current_good_index = numbers.size() - 1;
-    for (int index = numbers.size() - 1; index >= 0; index--) {
+    auto current_good_index = numbers.size() - 1;
+    for (auto index = numbers.size() - 1; index >= 0; index--) {
         if (index + numbers[index] >= current_good_index) {
             current_good_index = index;
         }
