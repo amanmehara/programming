@@ -17,12 +17,12 @@
 
 int count_primes(int number) {
 
-    auto primes = 0;
-    std::vector<bool> is_prime(number, true);
-
     if (number < 2) {
         return 0;
     }
+
+    auto primes = 0;
+    std::vector<bool> is_prime(number, true);
 
     is_prime[0] = false;
     is_prime[1] = false;
