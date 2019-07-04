@@ -20,7 +20,7 @@ void sort_colors(std::vector<int>& colors) {
 
     auto zero_index = 0;
     auto one_index = 0;
-    auto two_index = colors.size() - 1;
+    int two_index = colors.size() - 1;
 
     while (one_index <= two_index) {
         switch (colors[one_index]) {
