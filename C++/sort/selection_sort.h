@@ -12,25 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "bubble_sort.h"
+#ifndef MEHARA_SELECTION_SORT_H_
+#define MEHARA_SELECTION_SORT_H_
 
-#include <algorithm>
 #include <vector>
 
 namespace mehara::sort {
 
-void bubble_sort(std::vector<double>& array) {
-
-    auto swapped = false;
-    do {
-        swapped = false;
-        for (auto index = 0; index < array.size() - 1; index++) {
-            if (array[index] > array[index + 1]) {
-                std::swap(array[index], array[index + 1]);
-                swapped = true;
-            }
-        }
-    } while (swapped == true);
-}
+void selection_sort(std::vector<double>& array);
 
 } // namespace mehara::sort
+
+#endif // MEHARA_SELECTION_SORT_H_

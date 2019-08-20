@@ -15,10 +15,6 @@
 #ifndef MEHARA_SORT_H_
 #define MEHARA_SORT_H_
 
-#include "bubble_sort.h"
-#include "insertion_sort.h"
-#include "merge_sort.h"
-
 #include <vector>
 
 namespace mehara::sort {
@@ -26,7 +22,8 @@ namespace mehara::sort {
 enum class strategy {
     bubble_sort,
     insertion_sort,
-    merge_sort
+    merge_sort,
+    selection_sort
 };
 
 void sort(std::vector<double>& array, strategy strategy);

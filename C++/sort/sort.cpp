@@ -17,8 +17,10 @@
 #include <exception>
 #include <vector>
 
+#include "bubble_sort.h"
 #include "insertion_sort.h"
 #include "merge_sort.h"
+#include "selection_sort.h"
 
 namespace mehara::sort {
 
@@ -32,6 +34,9 @@ void sort(std::vector<double>& array, strategy strategy) {
         break;
     case strategy::merge_sort:
         merge_sort(array);
+        break;
+    case strategy::selection_sort:
+        selection_sort(array);
         break;
     default:
         throw std::exception();
