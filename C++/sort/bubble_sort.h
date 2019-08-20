@@ -12,25 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_SORT_H_
-#define MEHARA_SORT_H_
-
-#include "bubble_sort.h"
-#include "insertion_sort.h"
-#include "merge_sort.h"
+#ifndef MEHARA_BUBBLE_SORT_H_
+#define MEHARA_BUBBLE_SORT_H_
 
 #include <vector>
 
 namespace mehara::sort {
 
-enum class strategy {
-    bubble_sort,
-    insertion_sort,
-    merge_sort
-};
-
-void sort(std::vector<double>& array, strategy strategy);
+void bubble_sort(std::vector<double>& array);
 
 } // namespace mehara::sort
 
-#endif // MEHARA_SORT_H_
+#endif // MEHARA_BUBBLE_SORT_H_

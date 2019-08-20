@@ -24,6 +24,9 @@ namespace mehara::sort {
 
 void sort(std::vector<double>& array, strategy strategy) {
     switch (strategy) {
+    case strategy::bubble_sort:
+        bubble_sort(array);
+        break;
     case strategy::insertion_sort:
         insertion_sort(array);
         break;
