@@ -18,6 +18,7 @@
 #include <vector>
 
 #include "bubble_sort.h"
+#include "heap_sort.h"
 #include "insertion_sort.h"
 #include "merge_sort.h"
 #include "selection_sort.h"
@@ -28,6 +29,9 @@ void sort(std::vector<double>& array, strategy strategy) {
     switch (strategy) {
     case strategy::bubble_sort:
         bubble_sort(array);
+        break;
+    case strategy::heap_sort:
+        heap_sort(array);
         break;
     case strategy::insertion_sort:
         insertion_sort(array);
