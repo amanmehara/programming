@@ -21,6 +21,7 @@
 #include "heap_sort.h"
 #include "insertion_sort.h"
 #include "merge_sort.h"
+#include "quick_sort.h"
 #include "selection_sort.h"
 
 namespace mehara::sort {
@@ -38,6 +39,9 @@ void sort(std::vector<double>& array, strategy strategy) {
         break;
     case strategy::merge_sort:
         merge_sort(array);
+        break;
+    case strategy::quick_sort:
+        quick_sort(array);
         break;
     case strategy::selection_sort:
         selection_sort(array);
