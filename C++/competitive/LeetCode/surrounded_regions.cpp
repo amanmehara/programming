@@ -13,39 +13,39 @@
 // limitations under the License.
 
 #include <queue>
+#include <tuple>
 #include <utility>
 #include <vector>
 
-void flood_fill(std::vector<std::vector<char>>& board, int _r, int _c,
-                char target, char replacement) {
-    if (target == replacement || board[_r][_c] != target) {
+void flood_fill(std::vector<std::vector<char>>& board,
+                const std::tuple<int, int>& cell, 
+                const char& target,
+                const char& replacement) {
+    auto [r, c] = cell;
+    if (target == replacement || board[r][c] != target) {
         return;
     }
-    std::queue<std::pair<int, int>> frontier;
-    board[_r][_c] = replacement;
-    frontier.emplace(_r, _c);
+    std::queue<std::tuple<int, int>> frontier;
+    board[r][c] = replacement;
+    frontier.emplace(cell);
     while (!frontier.empty()) {
-        auto point = frontier.front();
+        auto [r, c] = frontier.front();
         frontier.pop();
-        if (point.first - 1 >= 0 &&
-            board[point.first - 1][point.second] == target) {
-            board[point.first - 1][point.second] = replacement;
-            frontier.emplace(point.first - 1, point.second);
+        if (c - 1 >= 0 && board[r][c - 1] == target) {
+            board[r][c - 1] = replacement;
+            frontier.emplace(r, c - 1);
         }
-        if (point.second - 1 >= 0 &&
-            board[point.first][point.second - 1] == target) {
-            board[point.first][point.second - 1] = replacement;
-            frontier.emplace(point.first, point.second - 1);
+        if (r - 1 >= 0 && board[r - 1][c] == target) {
+            board[r - 1][c] = replacement;
+            frontier.emplace(r - 1, c);
         }
-        if (point.first + 1 < board.size() &&
-            board[point.first + 1][point.second] == target) {
-            board[point.first + 1][point.second] = replacement;
-            frontier.emplace(point.first + 1, point.second);
+        if (c + 1 < board[0].size() && board[r][c + 1] == target) {
+            board[r][c + 1] = replacement;
+            frontier.emplace(r, c + 1);
         }
-        if (point.second + 1 < board[0].size() &&
-            board[point.first][point.second + 1] == target) {
-            board[point.first][point.second + 1] = replacement;
-            frontier.emplace(point.first, point.second + 1);
+        if (r + 1 < board.size() && board[r + 1][c] == target) {
+            board[r + 1][c] = replacement;
+            frontier.emplace(r + 1, c);
         }
     }
 };
@@ -56,18 +56,18 @@ void solve(std::vector<std::vector<char>>& board) {
     }
 
     for (auto index = 0; index < board.size(); index++) {
-        flood_fill(board, index, 0, 'O', 'Q');
-        flood_fill(board, index, board.size() - index - 1, 'O', 'Q');
+        flood_fill(board, {index, 0}, 'O', '#');
+        flood_fill(board, {index, board[0].size() - 1}, 'O', '#');
     }
 
     for (auto index = 0; index < board[0].size(); index++) {
-        flood_fill(board, 0, index, 'O', 'Q');
-        flood_fill(board, board[0].size() - index - 1, index, 'O', 'Q');
+        flood_fill(board, {0, index}, 'O', '#');
+        flood_fill(board, {board.size() - 1, index}, 'O', '#');
     }
 
     for (auto& row : board) {
         for (auto& cell : row) {
-            cell = cell == 'Q' ? 'O' : 'X';
+            cell = cell == '#' ? 'O' : 'X';
         }
     }
 }
