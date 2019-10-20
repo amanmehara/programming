@@ -7,22 +7,22 @@ int main() {
 	printf("Binary Search \n");
 	printf("\n");
 
-	int i, n, key, index;
+	int numberOfElement, key, index;
 
 	printf("Total Elements : ");
-	scanf("%d", &n);
+	scanf("%d", &numberOfElement);
 	printf("\n");
 
-	if (n < 1) {
+	if (numberOfElement < 1) {
 		printf("Invalid Input \n");
 		printf("\n");
 		return 1;
 	}
 
-	int *A = (int *)calloc(n, sizeof(int));
+	int *A = (int *)calloc(numberOfElement, sizeof(int));
 
 	printf("Number Input (Sorted Order)\n");
-	for (i = 0; i < n; i++) {
+	for (int i = 0; i < numberOfElement; i++) {
 		scanf("%d", (A + i));
 
 		if (i > 0 && *(A + (i - 1)) > *(A + i)) {
@@ -38,7 +38,7 @@ int main() {
 	scanf("%d", &key);
 	printf("\n");
 
-	index = binarySearch(A, n, key);
+	index = binarySearch(A, numberOfElement, key);
 
 	if (index == -1) {
 		printf("Number (%d) not found \n", key);
@@ -52,20 +52,20 @@ int main() {
 	return 0;
 }
 
-int binarySearch(int *A, int n, int key) {
-	int p = 0, q, r = (n-1);
+int binarySearch(int *A, int size, int key) {
+	int left = 0, mid, right = (size-1);
 
-	while (p < r) {
-		q = (p + r) / 2;
+	while (left <= right) {
+		mid = (left + right) / 2;
 
-		if (key == *(A + q)) {
-			return q;
+		if (key == *(A + mid)) {
+			return mid;
 		}
-		else if (key > *(A + q)) {
-			p = q + 1;
+		else if (key > *(A + mid)) {
+			left = mid + 1;
 		}
 		else {
-			r = q - 1;
+			right = mid - 1;
 		}
 	}
 
