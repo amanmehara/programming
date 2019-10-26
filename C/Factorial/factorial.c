@@ -1,43 +1,17 @@
-#include <stdio.h>
-
-long int iterativeFactorial(long int input);
-
-int main() {
-	long int number, result;
-
-	printf("Factorial of a number: \n");
-	printf("\n");
-
-	printf("Enter a Whole Number (max. 12): \n");
-	scanf("%ld", &number);
-	printf("\n");
-
-	if (number > 12) {
-		printf("Number > 12 \n");
-		printf("\n");
-		return 1;
-	}
-
-	result = iterativeFactorial(number);
-
-	if (result == -1) {
-		printf("Invalid Input \n");
-	}
-	else {
-		printf("(%ld)! = %ld \n", number, result);
-	}
-	printf("\n");
-
-	return 0;
-}
-
-long int iterativeFactorial(long int input)
-{
-	int factorial = 1;
-
-	for (int i = 1; i <= input; i++) {
-		factorial *= i;
-	}
-
-	return factorial;
-}
+#include<iostream> 
+using namespace std; 
+  
+unsigned long long factorial(unsigned long long n) 
+{ 
+    if (n == 0) 
+    return 1; 
+    return n * factorial(n - 1); 
+} 
+  
+int main() 
+{ 
+    long long num;
+	cin>>long;
+    cout << "Factorial of " << num << " is " << factorial(num) << endl; 
+    return 0; 
+} 
