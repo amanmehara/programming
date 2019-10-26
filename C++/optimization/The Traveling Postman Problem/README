@@ -1,0 +1,7 @@
+to compile use:
+
+g++ main.cpp the_traveling_postman_problem.cpp
+
+and then run with
+
+./a.out
