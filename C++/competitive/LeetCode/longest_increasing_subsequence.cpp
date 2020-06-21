@@ -23,7 +23,6 @@ int lengthOfLIS(std::vector<int>& sequence)
     std::vector<int> dp(sequence.size(), 1);
     int length_lis = 0;
     for (int i = 0; i < sequence.size(); i++) {
-        dp[i] = 1;
         for (int j = 0; j < i; j++) {
             if (sequence[j] < sequence[i]) {
                 dp[i] = std::max(dp[j] + 1, dp[i]);
