@@ -1,4 +1,4 @@
-# programming-app-data
+# programming
 A polyglot collection of algorithms and code snippets.
 
 ## Programming languages
