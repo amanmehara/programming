@@ -7,6 +7,7 @@ A polyglot collection of algorithms and code snippets.
 * C#
 * C++
 * F#
+* Go
 * Groovy
 * Java
 * JavaScript
