@@ -6,6 +6,7 @@ A polyglot collection of algorithms and code snippets.
 * C
 * C#
 * C++
+* Dictu
 * F#
 * Go
 * Groovy
