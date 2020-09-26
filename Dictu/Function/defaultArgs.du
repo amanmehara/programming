@@ -1,0 +1,7 @@
+// A function can have optional parameters
+def test(a, b=20) {
+    return a + b;
+}
+
+print(test(5, 10)); // 15
+print(test(5)); // 25

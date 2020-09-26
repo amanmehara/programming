@@ -1,0 +1,18 @@
+// An abstract class is a class which can only be inherited.
+// It can not be instantiated.
+abstract class Test {
+    // An abstract method is a method which MUST be implemented
+    // in the child class
+    abstract hello()
+}
+
+// Inherit Test class
+class AnotherClass < Test {
+    hello() {
+        print("Hello!");
+    }
+}
+
+// Instantiate AnotherClass
+var obj = AnotherClass();
+obj.hello();

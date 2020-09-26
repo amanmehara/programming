@@ -1,0 +1,14 @@
+// A static method is a method which can be called directly on the class
+// rather than an object
+class Test {
+    static func() {
+        return 10;
+    }
+
+    static args(a, b) {
+        return a + b;
+    }
+}
+
+print(Test.func()); // 10
+print(Test.args(10, 20)); // 30

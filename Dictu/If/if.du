@@ -1,0 +1,24 @@
+// Example 1
+var x = input("Please enter an integer: ").toNumber();
+
+if (x < 0) {
+    x = 0;
+    print("Negative changed to zero");
+} else if (x == 0) {
+    print("Zero");
+} else if (x == 1) {
+    print("Single");
+} else {
+    print("More");
+}
+
+// Example 2
+var x = true;
+
+if (x)
+    print("Single body if statements can drop the {}");
+
+x = false;
+
+if (x)
+    print("This won't print!");

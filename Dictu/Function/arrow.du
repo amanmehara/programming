@@ -1,0 +1,12 @@
+// Arrow functions are anonymous functions
+
+var x = def () => 10;
+
+print(x); // 10
+
+def businessLogic(callback) {
+    // Pretend theres some logic here...
+    return callback(5, 20);
+}
+
+print(businessLogic(def (a, b) => a + b)); // 25
