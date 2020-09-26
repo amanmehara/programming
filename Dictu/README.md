@@ -18,6 +18,7 @@ Dictu means `simplistic` in Latin.
 
 ### Dictu documentation
 Documentation for Dictu can be found [here](https://dictu-lang.com/)
+
 Github repository for Dictu can be found [here](https://github.com/dictu-lang/Dictu)
 
 ## Running Dictu
