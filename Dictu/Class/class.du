@@ -1,0 +1,74 @@
+/*
+ * Copyright 2020 Jason Hall
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// Setup a new trait
+trait PrintNameTrait {
+    printName() {
+        print(this.name);
+    }
+}
+
+// Setup a new class
+class Person {
+    // Use the trait and inherit the methods
+    use PrintNameTrait;
+
+    // Class constructor
+    init(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Define a new method
+    printAge() {
+        print("{} is {} years old!".format(this.name, this.age));
+    }
+}
+
+// Setup a new class
+class Car {
+    // Use the trait and inherit the methods
+    use PrintNameTrait;
+
+    // Class constructor
+    init(name, model) {
+        this.name = name;
+        this.model = model;
+    }
+
+    // Define a new method
+    printInfo() {
+        print("{} is a {} model".format(this.model, this.name));
+    }
+}
+
+// Instantiate a new Person object
+var bob = Person("Bob", 74);
+
+// Call the method defined in the trait
+bob.printName();
+
+// Call the method defined in the class
+bob.printAge();
+
+// Instantiate a new Car object
+var cayman = Car("Porsche", "Cayman");
+
+// Call the method defined in the trait
+cayman.printName();
+
+// Call the method defined in the class
+cayman.printInfo();
