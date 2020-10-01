@@ -1,6 +1,6 @@
 # Contributing to programming
 
-First off, thanks for taking the time to contribute! 🎉
+First off, thanks for taking the time to contribute! :tada:
 
 ## Ensure the following things in the PR
 
@@ -11,4 +11,8 @@ First off, thanks for taking the time to contribute! 🎉
 * Spaces are used for indentation.
 * Add newline at end of file.
 
-Thanks Again! 😃
+## Code Guildelines
+
+* Use **snake_case** :snake: for C, C++ & Python.
+
+Thanks Again! :smiley:
