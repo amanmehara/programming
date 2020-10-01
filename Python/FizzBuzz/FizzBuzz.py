@@ -24,3 +24,4 @@ def FizzBuzz(n): #We are creating a function which takes an integer as input
 			print(s)            #Print s otherwise
 
 FizzBuzz(50)    #This line calls the function FizzBuzz
+
