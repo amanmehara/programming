@@ -21,35 +21,42 @@ using namespace std;
 #define fori(n) for (ll i = 0; i < n; i++)
 #define forj(n) for (ll j = 0; j < n; j++)
 #define vl vector<ll> 
-#define fast ios_base::sync_with_stdio(0); cin.tie(NULL);
 #define mod 1000000007
 #define mp make_pair
 #define vp vector<pair<int, int>>
 
  	int main()
- 	{
- 		fast
+ 	{   
+ 	
 
  		intt n;
  		cin >> n;
  		intt a[n];
+		//Taking the input array 
+
  		for (intt i = 0; i < n; i++)
  		{
  			cin >> a[i];
  		}
+        //The next k lines each contain two numbers x and y which specify a query you must answer.
 
  		intt k;
  		cin >> k;
  		for (intt i = 0; i < k; i++)
- 		{
+ 		{   //Range of query x,y.
+
  			intt x, y;
  			cin >> x >> y;
+			//Declared the sum variable
+			
  			intt sum = 0;
+			//Traverse the array in the range x,y and keep adding the sum of elments which are in between the query range.
+
  			for (intt i = x; i <= y; i++)
  			{
  				sum += a[i];
  			}
-
+            //Finally return the sum of those elements.
  			cout << sum << endl;
  		}
 
