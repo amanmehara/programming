@@ -44,13 +44,16 @@ let Queue = function () {
 
 let q = new Queue();
 
+// Adding an element to the tail of the queue
 q.enqueue("a");
 q.enqueue("b");
 q.enqueue("c");
 
 q.print();
 
+// Removing an element from the queue
 q.dequeue();
+
 console.log(q.front());
 
 q.print();
