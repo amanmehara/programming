@@ -9,7 +9,6 @@ public class Main {
         dl.InsertLast ( 11 );
         dl.InsertLast ( 33 );
         dl.InsertLast ( 55 );
-
         dl.DisplayForward ();
         dl.DisplayBackward ();
 
