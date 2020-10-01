@@ -1,3 +1,9 @@
+/**
+ * Year: 2020
+ * Copyright: Rajdeep Chandra
+ * License: https://www.apache.org/licenses/LICENSE-2.0
+ */
+
 let Queue = function () {
 
     let collection = [];
@@ -37,10 +43,14 @@ let Queue = function () {
 // Running the program
 
 let q = new Queue();
+
 q.enqueue("a");
 q.enqueue("b");
 q.enqueue("c");
+
 q.print();
+
 q.dequeue();
 console.log(q.front());
+
 q.print();

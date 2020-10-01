@@ -1,4 +1,8 @@
-// create a stack function with javascript to understand how stack works
+/**
+ * Year: 2020
+ * Copyright: Rajdeep Chandra
+ * License: https://www.apache.org/licenses/LICENSE-2.0
+ */
 
 
 var Stack = function() {
@@ -49,6 +53,9 @@ var newStack = new Stack();
 
 newStack.push(1);
 newStack.push(2);
+
 console.log(newStack.peek());
+
 console.log(newStack.pop());
+
 console.log(newStack.peek());
