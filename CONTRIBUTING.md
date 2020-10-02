@@ -15,4 +15,10 @@ First off, thanks for taking the time to contribute! :tada:
 
 * Use **snake_case** :snake: for C, C++ & Python.
 
+## Issue Creation
+
+Create a new issue in the following scenarios:
+* An issue corresponding to a **programming language** is not yet created.
+* A bug :bug: in existing code has been detected.
+
 Thanks Again! :smiley:
