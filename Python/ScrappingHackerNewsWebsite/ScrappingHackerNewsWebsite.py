@@ -1,4 +1,17 @@
 '''
+Copyright [2020] [Arun Kumar G]
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+'''
+
+'''
 Scraping the first 2 pages of Hacker news website which gives lot of Tech news(as a articles)
 which has upvotes more than 100.User can just click on story link to see the article.
 '''
@@ -52,3 +65,4 @@ def create_custom_hackernews(mega_link,mega_votes):
 if __name__ == '__main__':
     # Prints story link, story title and its votes in a pretty manner
     pprint.pprint(create_custom_hackernews(mega_link,mega_votes))
+    
