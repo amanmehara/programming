@@ -161,3 +161,4 @@ public class SJFPremptive
       findavgTime(proc, proc.length); 
  } 
 } 
+
