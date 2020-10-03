@@ -38,36 +38,28 @@ int main() {
 	scanf("%d", &key);
 	printf("\n");
 
-	index = binarySearch(A, n, key);
+	index = binaryrec(A,0, n, key);
 
-	if (index == -1) {
-		printf("Number (%d) not found \n", key);
-	}
-	else {
-		printf("Number (%d) found at Index : %d \n", key, index);
-	}
-
-	printf("\n");
+	printf("%d",index);
 
 	return 0;
 }
 
-int binarySearch(int *A, int n, int key) {
-	int p = 0, q, r = (n-1);
+int binaryrec(int arr[] , int first , int last ,int key )
+{
+    int mid ;
+    mid = (first + last) /2 ;
+    if (arr[mid] == key )
+    {
+        return mid + 1;
+    }
+    else if(arr[mid] > key)
+    {
+        binaryrec(arr , first ,mid - 1 , key );
+    }
+    else if(arr[mid] < key)
+    {
+        binaryrec(arr , mid + 1 , last , key );
+    }
 
-	while (p < r) {
-		q = (p + r) / 2;
-
-		if (key == *(A + q)) {
-			return q;
-		}
-		else if (key > *(A + q)) {
-			p = q + 1;
-		}
-		else {
-			r = q - 1;
-		}
-	}
-
-	return -1;
 }
