@@ -15,7 +15,7 @@ limitations under the License.
 
 import java.util.*;
 
-public class binaryTreeDFS {
+public class BinaryTreeDFS {
 	static class Node {
 		int data;
 		Node left, right;
