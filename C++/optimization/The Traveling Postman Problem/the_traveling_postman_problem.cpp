@@ -40,12 +40,38 @@ int TheTravelingPostmanProblem::solve(int i, int s){//*i* is the current point a
 	return ans;
 }
 
-int TheTravelingPostmanProblem::MinimumDistance(){
+void TheTravelingPostmanProblem::get_path(int i, int s, vector< Point > &path){//*i* is the current point and *s* the mask of visited points
+	int &ans = dp[i][s];
+	path.push_back(points[i]);
+	bool find = false;
+
+	for(int k = 0 ; k < points.size() ; k++){
+		int chk = 1 << k;
+		
+		if((s & chk) == 0 && ans == solve(k, s | chk) + dis(points[i], points[k])){//If point *k* is not visited then go to *k* from *i*
+			find = true;
+			get_path(k, s | chk, path);
+			break;
+		}	
+	}
+}
+
+//returns the minimum distance and a path that have this total distance
+pair< int, vector< Point > > TheTravelingPostmanProblem::MinimumDistance(){
 	int ans = inf;
 
 	for(int i = 0 ; i < points.size() ; i++){//try starting from each of the points.
 		ans = min(ans, solve(i, 1 << i) + dis(start, points[i]));
 	}
+
+	vector< Point > path;
+
+	for(int i = 0 ; i < points.size() ; i++){
+		if(ans == solve(i, 1 << i) + dis(start, points[i])){
+			get_path(i, 1 << i, path);
+			break;
+		}
+	}
 	
-	return ans;
+	return {ans, path};
 }

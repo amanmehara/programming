@@ -2,6 +2,7 @@
 
 class TheTravelingPostmanProblem{
 	int solve(int i, int s);
+	void get_path(int i, int s, std::vector< Point > &path);
 
 public:
 	std::vector< Point > points;
@@ -12,5 +13,7 @@ public:
 		this->start = start;
 	}
 
-	int MinimumDistance();//Return the minimum distance to take all 'points' starting on 'start' point, and then back to 'start' point again
+	std::pair< int, std::vector< Point > > 
+		MinimumDistance();//Return the minimum distance to take all 'points' starting on 'start' point, and then back to 'start' point again
+	
 };
