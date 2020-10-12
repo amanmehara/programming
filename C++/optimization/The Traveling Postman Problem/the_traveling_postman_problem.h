@@ -14,6 +14,6 @@ public:
 	}
 
 	std::pair< int, std::vector< Point > > 
-		MinimumDistance();//Return the minimum distance to take all 'points' starting on 'start' point, and then back to 'start' point again
+		minimum_distance();//Return the minimum distance to take all 'points' starting on 'start' point, and then back to 'start' point again
 	
 };

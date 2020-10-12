@@ -1,4 +1,4 @@
 class Point{
 public:
-	int x, y;
+ int x, y;
 };
