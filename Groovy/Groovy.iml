@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Abstract Class" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Annonymous Inner Class" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Assignment Arithmetic Operators" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Literal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Bitwise Operator" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Booleans" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Characters" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Class" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Decimal Literal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Default Arguements" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Default Import" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Define Methods In Script" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Fields" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Groovy Doc Comment" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Hexadecimal Literal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Import Aliasing" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Inner Class" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Integer Literal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interface" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interface Implementation" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interface Inheritance" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Logical Operators" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Main (Script Versus Classes)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Math Operations (Resulting Types)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Method Definition" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Mix Methods &amp; Code" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Multiline Comments" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Named Arguements" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/NamedArguementConstructor" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Normal Arithmetic Operators" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Normal Class" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Normal Identifiers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Not Operator (Conditional)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Number Type Suffixes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Octal Literal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Package Name" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Positional Arguement Constructor" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Precedence (Logical Operators)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Primitive Types" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Relational Operators" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Script (Script Versus Classes)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Script Class" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Short-circuiting (Logical Operators)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Simple Import" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Single Line Comment" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Single Quoted String" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Star Import" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Static Import" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Static Import Aliasing" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Static Star Import" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/String Concatenation" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Unary Operators" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Underscore In Literal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Variables With Type Definition" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Variables Without Type Definition" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

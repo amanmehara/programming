@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Activity Selector (Greedy Iterative)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Arithmetic Progression" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Arithmetic Progression (Lambda)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Binary Addition" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Console Input" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Decimal To Binary Converter" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Decimal To Binary Using Stack" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Doubly Linked List" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Factorial" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Geometric Progression" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Geometric Progression (Lambda)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph (Breadth First Traversal)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph (Depth First Traversal)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph (Directed)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Graph (Topological Sort)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Hello World" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/IP Address Finder" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Is Even" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Is Odd" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Linked List" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Local IP Address Finder" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Longest Common Subsequence (Tabulation)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Number Reversal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Number To Words" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Palindrome Number" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Prime Number Checker" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recursion (Binary Search)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recursion (Factorial)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recursion (Fibonacci Number)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recursion (Insertion Sort)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Recusrion (Linear Search)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Roman To Integer" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Searching (Binary Search)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Searching (Linear Search)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sequence (Maximum)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sequence (Mean)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sequence (Minimum)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sequence (Sum)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SI And Amount" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sorting (Bubble Sort)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sorting (Insertion Sort)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Sorting (Selection Sort)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Swap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Union Find (Quick Find)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Union Find (Quick Union)" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

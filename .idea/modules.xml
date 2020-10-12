@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Groovy/Groovy.iml" filepath="$PROJECT_DIR$/Groovy/Groovy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kotlin/Kotlin.iml" filepath="$PROJECT_DIR$/Kotlin/Kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java/prgm.iml" filepath="$PROJECT_DIR$/Java/prgm.iml" />
+    </modules>
+  </component>
+</project>
