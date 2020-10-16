@@ -14,5 +14,6 @@ A polyglot collection of algorithms and code snippets.
 * JavaScript
 * PHP
 * Python
+* Ruby
 * Scala
 * SQL
