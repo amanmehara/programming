@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1597372398 source:d:\project\icpcpractice\codechef\dynamic_programming\billiards\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1598629782 source:d:\project\icpcpractice\codechef\happy_employee\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+

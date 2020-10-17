@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1596716644 source:d:\project\icpcpractice\codechef\chef_and_notebook\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+	<algorithm>
+

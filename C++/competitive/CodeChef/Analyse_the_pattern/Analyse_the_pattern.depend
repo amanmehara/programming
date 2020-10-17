@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1600237641 source:d:\project\icpcpractice\codechef\analyse_the_pattern\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+
