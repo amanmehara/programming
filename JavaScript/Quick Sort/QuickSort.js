@@ -62,3 +62,8 @@ function quickSort(items, left = 0, right = items.length - 1) {  //defines main 
     }
     return items                                                 //returns sorted array
 }
+
+// Usage: quickSort([1, 3, -2, 7, 8, 4, 5, -1])
+
+// Input: [1, 3, -2, 7, 8, 4, 5, -1]
+// Output: [-2, -1, 1, 3, 4, 5, 7, 8]
