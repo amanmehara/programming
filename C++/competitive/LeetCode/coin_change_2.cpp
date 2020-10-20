@@ -13,7 +13,7 @@
 class Solution {
 public:
     int change(int amount, vector<int>& coins) {
-        //here dp represents the previous denomination operation values currently all set as 0 for default
+        //here dp represents the previous denomination's operation values currently all set as 0 for default
         int dp[5001] = {0};
         
         //we can create 0 amount by just selecting no coins i.e. 1 way
