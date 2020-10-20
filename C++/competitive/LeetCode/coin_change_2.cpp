@@ -13,41 +13,19 @@
 class Solution {
 public:
     int change(int amount, vector<int>& coins) {
-        //create a dp table
-        //rows represent index of coins in the 'coins' vector whereas first row represent no coins
-        //columns represent amount from 0 to amount
-        int dp [coins.size()+1][amount+1];
-        for(int i=0;i<coins.size()+1;i++){
-            for(int j=0;j<amount+1;j++){
-
-                //for first column the value should be 1 stating that amount 0 can be formed in one way i.e. no coins 
-                if(j==0){
-                    dp[i][j]=1;
-                    continue;
-                }
-
-                //for first row and columns>0 the value will be 0 as no amount greater than 0 can be formed by number of coins = 0 i.e. no coins
-                if(i==0){
-                    dp[i][j]=0;
-                    continue;
-                }
-
-                //case: we not select current denomination
-                int a = dp[i-1][j];
-
-                //case: we select current denomination and check number of ways amount-currentDenomination can be formed
-                //here 0 means that the current denomination is greater tha column amount
-                int b = coins[i-1]>j?0:dp[i][j-coins[i-1]];
-                
-                //add ways of forming an amount in both the above cases
-                dp[i][j]=a+b;
-                
-            }
-           
-        }
+        //here dp represents the previous denomination operation values currently all set as 0 for default
+        int dp[5001] = {0};
         
-        //dp[coins.size][amount] represents the total number of ways for that required amount considering all denominations
-        return dp[coins.size()][amount]; 
+        //we can create 0 amount by just selecting no coins i.e. 1 way
+        dp[0] = 1;
+        for (int i=0;i<coins.size();i++) {
+            for (int j = coins[i]; j <= amount; j++) {
+                //here we have to add for two options : 1)if we select current denomination ( dp[currentAmount(j) - currentDenomination(coins[i])] )  + 
+                 //2) if we dont select current denomination ( dp[currentAmount(j)] )
+                dp[j] += dp[j - coins[i]];
+            }
+        }
+        return dp[amount]; 
     }
 };
 
