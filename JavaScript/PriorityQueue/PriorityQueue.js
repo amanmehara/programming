@@ -81,7 +81,7 @@ var pq = new PriorityQueue();
 pq.enqueue(1, 4);
 pq.enqueue(2, 7);
 
-console.log('frone ius', pq.front());
+console.log(pq.front());
 
 console.log(pq.rear());
 
