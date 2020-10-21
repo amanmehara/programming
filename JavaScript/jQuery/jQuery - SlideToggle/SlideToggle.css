@@ -1,0 +1,34 @@
+body {
+}
+
+a {
+    color: yellow;
+    text-decoration: none;
+}
+
+#toBeToggled {
+    color: white;
+    background-color: purple;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: lighter;
+    font-size: x-large;
+    padding: 8px 32px;
+    margin-bottom: 16px;
+    border: 2px solid black;
+    border-top: none;
+}
+
+#slideToggle {
+    color: white;
+    background-color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: lighter;
+    font-size: xx-large;
+    padding: 4px 32px;
+    border: 2px solid black;
+}
+
+#slideToggle:hover {
+    background-color: gray;
+    cursor: pointer;
+}
