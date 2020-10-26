@@ -16,13 +16,13 @@
 import java.util.Scanner;
 
 /**
- * Program			=>		Implementation of Dijkastra's Shortest Path Algorithm in Java using Data Structure Adjacency Matrix
+ * Program			=>		Implementation of Dijkstra's Shortest Path Algorithm in Java using Data Structure Adjacency Matrix
  * Documentation	=> 		Is provided at the end of the Program
  * Issue Details	=> 		https://github.com/amanmehara/programming/issues/80
  * Contributed by	=>		@sumitaccess007 : https://github.com/sumitaccess007
  */
 
-public class DijkastraShortestPathAlgorithm {
+public class DijkstraShortestPathAlgorithm {
 	
 	// Main Function - Starting point of any Java Program
 	public static void main(String args []){
@@ -55,11 +55,11 @@ public class DijkastraShortestPathAlgorithm {
 		
 		// STEP-4 - Call function to calculate shortest path between vertices
 		// A utility function to find out the vertex from graph with minimum shortest value
-		dijkastraShortestPath(adjacencyMatrix, vertices, 0);
+		dijkstraShortestPath(adjacencyMatrix, vertices, 0);
 		
 	}
 
-	private static void dijkastraShortestPath(int[][] graph, int numberOfVertices, int sourceVertex) {
+	private static void dijkstraShortestPath(int[][] graph, int numberOfVertices, int sourceVertex) {
 		
 		// Output Array to hold the shortest distance from Source vertex to final vertex of graph
 		int shortestDistance[] = new int[numberOfVertices];
@@ -134,12 +134,12 @@ public class DijkastraShortestPathAlgorithm {
 }
 
 /*
- * Dijkastra Algorithm :
- * 			To find the shortest path between two nodes of a graph, most commonly used algorithm is Dijkastra's Algorithm.
- * 			Dijkastra's Algorithm is a Greedy Algorithm
- * 			Dijkastra's Algorithm finds the shortest path tree for weighted undirected graph
- * 			Dijkastra's Algorithm is very similar to Prim's Algorithm
- * 			In Dijkastra's Algorithm we create Shortest Path Tree while in Prim's Algorithm we create Minimum Spanning Tree
+ * Dijkstra Algorithm :
+ * 			To find the shortest path between two nodes of a graph, most commonly used algorithm is Dijkstra's Algorithm.
+ * 			Dijkstra's Algorithm is a Greedy Algorithm
+ * 			Dijkstra's Algorithm finds the shortest path tree for weighted undirected graph
+ * 			Dijkstra's Algorithm is very similar to Prim's Algorithm
+ * 			In Dijkstra's Algorithm we create Shortest Path Tree while in Prim's Algorithm we create Minimum Spanning Tree
  * 
  * 
  * About Above Implementation :
@@ -150,7 +150,7 @@ public class DijkastraShortestPathAlgorithm {
  * 
  * Usage :
  * 			This algorithm is used to find the shortest distance from the source node to all the other nodes in the graph.
- * 			Dijkastra Algorithm does work for the graph with negative weight cycles.
+ * 			Dijkstra Algorithm does work for the graph with negative weight cycles.
  *  		(It may give correct results sometimes but not always, so better to avoid using it.)
  * 
  * 
