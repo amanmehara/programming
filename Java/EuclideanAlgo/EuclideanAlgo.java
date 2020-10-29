@@ -21,7 +21,7 @@ public class EuclideanAlgo {
 	public static void main(String args[]) {
 		int a = 35, b = 10;
 		System.out.println(gcd(a, b));
-		
+		// Output : 5
 	}
 	
 	private static int gcd(int a, int b) {
