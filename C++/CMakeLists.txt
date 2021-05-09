@@ -1,6 +1,6 @@
-﻿cmake_minimum_required (VERSION 3.16)
+﻿cmake_minimum_required (VERSION 3.18)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project ("programming" CXX)
@@ -14,6 +14,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 add_library(programming)
+set_target_properties(programming PROPERTIES LINKER_LANGUAGE CXX)
 
 enable_testing()
 add_subdirectory(randomized_algorithms)

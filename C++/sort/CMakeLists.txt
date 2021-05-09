@@ -1,17 +1,10 @@
 target_sources(programming
     PRIVATE
-    bubble_sort.cpp
     bubble_sort.h
-    heap_sort.cpp
     heap_sort.h
-    insertion_sort.cpp
     insertion_sort.h
-    merge_sort.cpp
     merge_sort.h
-    quick_sort.cpp
     quick_sort.h
-    selection_sort.cpp
     selection_sort.h
-    sort.cpp
     sort.h
 )
