@@ -1,6 +1,7 @@
 include(GoogleTest)
 
 add_executable(programming_test 
+    mathematics_test.cpp
     randomized_algorithms_test.cpp 
     sorting_algorithms_test.cpp)
 
