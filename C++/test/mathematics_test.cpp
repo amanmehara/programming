@@ -3,6 +3,7 @@
 #include "../mathematics/number_theory/factorization.h"
 #include "../mathematics/number_theory/gcd.h"
 #include "../mathematics/number_theory/lcm.h"
+#include "../mathematics/number_theory/sieve_of_eratosthenes.h"
 
 TEST(mathematics, factorization_trial_division)
 {
@@ -43,4 +44,19 @@ TEST(mathematics, lcm)
     ASSERT_EQ(80, mehara::mathematics::lcm(20, 16));
     ASSERT_EQ(80, mehara::mathematics::lcm(16, 20));
     ASSERT_EQ(270, mehara::mathematics::lcm(90, 27));
+}
+
+TEST(mathematics, sieve_of_eratosthenes)
+{
+    auto is_prime = mehara::mathematics::sieve_of_eratosthenes(9);
+    ASSERT_EQ(false, is_prime[0]);
+    ASSERT_EQ(false, is_prime[1]);
+    ASSERT_EQ(true, is_prime[2]);
+    ASSERT_EQ(true, is_prime[3]);
+    ASSERT_EQ(false, is_prime[4]);
+    ASSERT_EQ(true, is_prime[5]);
+    ASSERT_EQ(false, is_prime[6]);
+    ASSERT_EQ(true, is_prime[7]);
+    ASSERT_EQ(false, is_prime[8]);
+    ASSERT_EQ(false, is_prime[9]);
 }
