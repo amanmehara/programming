@@ -22,37 +22,39 @@ namespace mehara::mathematics {
 
 template <typename T>
 requires std::integral<T> 
-std::vector<T> trial_division(T number) {
-  std::vector<T> factorization;
-  for (int divisor = 2; divisor * divisor <= number; divisor++) {
-    while (number % divisor == 0) {
-      factorization.push_back(divisor);
-      number /= divisor;
+std::vector<T> trial_division(T number)
+{
+    std::vector<T> factorization;
+    for (T divisor = 2; divisor * divisor <= number; divisor++) {
+        while (number % divisor == 0) {
+            factorization.push_back(divisor);
+            number /= divisor;
+        }
     }
-  }
-  if (number > 1) {
-    factorization.push_back(number);
-  }
-  return factorization;
+    if (number > 1) {
+        factorization.push_back(number);
+    }
+    return factorization;
 }
 
 template <typename T>
-requires std::integral<T> std::vector<T>
-factorize(T number, const std::vector<T>& primes) {
-  std::vector<T> factorization;
-  for (const auto& divisor : primes) {
-    if (divisor * divisor > number) {
-      break;
+requires std::integral<T> std::vector<T> 
+factorize(T number, const std::vector<T>& primes)
+{
+    std::vector<T> factorization;
+    for (const auto& divisor : primes) {
+        if (divisor * divisor > number) {
+            break;
+        }
+        while (number % divisor == 0) {
+            factorization.push_back(divisor);
+            number /= divisor;
+        }
     }
-    while (number % divisor == 0) {
-      factorization.push_back(divisor);
-      number /= divisor;
+    if (number > 1) {
+        factorization.push_back(number);
     }
-  }
-  if (number > 1) {
-    factorization.push_back(number);
-  }
-  return factorization;
+    return factorization;
 }
 
 } // namespace mehara::mathematics
