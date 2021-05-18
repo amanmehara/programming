@@ -1,9 +1,18 @@
 #include "gtest/gtest.h"
 
+#include "../mathematics/number_theory/binary_exponentiation.h"
 #include "../mathematics/number_theory/factorization.h"
 #include "../mathematics/number_theory/gcd.h"
 #include "../mathematics/number_theory/lcm.h"
 #include "../mathematics/number_theory/sieve_of_eratosthenes.h"
+
+TEST(mathematics, binary_exponentiation)
+{
+    ASSERT_EQ(256, mehara::mathematics::binary_exponentiation_recursive(2, 8));
+    ASSERT_EQ(243, mehara::mathematics::binary_exponentiation_recursive(3, 5));
+    ASSERT_EQ(256, mehara::mathematics::binary_exponentiation_iterative(2, 8));
+    ASSERT_EQ(243, mehara::mathematics::binary_exponentiation_iterative(3, 5));
+}
 
 TEST(mathematics, factorization_trial_division)
 {
