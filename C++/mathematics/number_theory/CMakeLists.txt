@@ -5,4 +5,5 @@ target_sources(programming
     gcd.h
     lcm.h
     sieve_of_eratosthenes.h
+    totient_function.h
 )

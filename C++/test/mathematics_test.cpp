@@ -5,18 +5,21 @@
 #include "../mathematics/number_theory/gcd.h"
 #include "../mathematics/number_theory/lcm.h"
 #include "../mathematics/number_theory/sieve_of_eratosthenes.h"
+#include "../mathematics/number_theory/totient_function.h"
+
+namespace mehara::mathematics::test {
 
 TEST(mathematics, binary_exponentiation)
 {
-    ASSERT_EQ(256, mehara::mathematics::binary_exponentiation_recursive(2, 8));
-    ASSERT_EQ(243, mehara::mathematics::binary_exponentiation_recursive(3, 5));
-    ASSERT_EQ(256, mehara::mathematics::binary_exponentiation_iterative(2, 8));
-    ASSERT_EQ(243, mehara::mathematics::binary_exponentiation_iterative(3, 5));
+    ASSERT_EQ(256, binary_exponentiation_recursive(2, 8));
+    ASSERT_EQ(243, binary_exponentiation_recursive(3, 5));
+    ASSERT_EQ(256, binary_exponentiation_iterative(2, 8));
+    ASSERT_EQ(243, binary_exponentiation_iterative(3, 5));
 }
 
 TEST(mathematics, factorization_trial_division)
 {
-    auto actual_factors = mehara::mathematics::trial_division(20);
+    auto actual_factors = trial_division(20);
     std::vector<int> expected_factors{2, 2, 5};
     ASSERT_EQ(expected_factors.size(), actual_factors.size());
     for (int i = 0; i < actual_factors.size(); i++) {
@@ -27,7 +30,7 @@ TEST(mathematics, factorization_trial_division)
 TEST(mathematics, factorization_precomputed_primes)
 {
     std::vector<int> primes{2, 3, 5, 7, 11, 13, 17, 19, 23};
-    auto actual_factors = mehara::mathematics::factorize(221, primes);
+    auto actual_factors = factorize(221, primes);
     std::vector<int> expected_factors{13, 17};
     ASSERT_EQ(expected_factors.size(), actual_factors.size());
     for (int i = 0; i < actual_factors.size(); i++) {
@@ -37,27 +40,27 @@ TEST(mathematics, factorization_precomputed_primes)
 
 TEST(mathematics, gcd)
 {
-    ASSERT_EQ(1, mehara::mathematics::gcd(71, 23));
-    ASSERT_EQ(1, mehara::mathematics::gcd(23, 71));
-    ASSERT_EQ(1, mehara::mathematics::gcd(37, 29));
-    ASSERT_EQ(4, mehara::mathematics::gcd(20, 16));
-    ASSERT_EQ(4, mehara::mathematics::gcd(16, 20));
-    ASSERT_EQ(9, mehara::mathematics::gcd(90, 27));
+    ASSERT_EQ(1, gcd(71, 23));
+    ASSERT_EQ(1, gcd(23, 71));
+    ASSERT_EQ(1, gcd(37, 29));
+    ASSERT_EQ(4, gcd(20, 16));
+    ASSERT_EQ(4, gcd(16, 20));
+    ASSERT_EQ(9, gcd(90, 27));
 }
 
 TEST(mathematics, lcm)
 {
-    ASSERT_EQ(1633, mehara::mathematics::lcm(71, 23));
-    ASSERT_EQ(1633, mehara::mathematics::lcm(23, 71));
-    ASSERT_EQ(1073, mehara::mathematics::lcm(37, 29));
-    ASSERT_EQ(80, mehara::mathematics::lcm(20, 16));
-    ASSERT_EQ(80, mehara::mathematics::lcm(16, 20));
-    ASSERT_EQ(270, mehara::mathematics::lcm(90, 27));
+    ASSERT_EQ(1633, lcm(71, 23));
+    ASSERT_EQ(1633, lcm(23, 71));
+    ASSERT_EQ(1073, lcm(37, 29));
+    ASSERT_EQ(80, lcm(20, 16));
+    ASSERT_EQ(80, lcm(16, 20));
+    ASSERT_EQ(270, lcm(90, 27));
 }
 
 TEST(mathematics, sieve_of_eratosthenes)
 {
-    auto is_prime = mehara::mathematics::sieve_of_eratosthenes(9);
+    auto is_prime = sieve_of_eratosthenes(9);
     ASSERT_EQ(false, is_prime[0]);
     ASSERT_EQ(false, is_prime[1]);
     ASSERT_EQ(true, is_prime[2]);
@@ -69,3 +72,25 @@ TEST(mathematics, sieve_of_eratosthenes)
     ASSERT_EQ(false, is_prime[8]);
     ASSERT_EQ(false, is_prime[9]);
 }
+
+TEST(mathematics, totient_function_phi)
+{
+    std::vector<int> expected_values{0, 1, 1, 2, 2, 4, 2, 6, 4, 6};
+    ASSERT_EQ(expected_values[1], phi_of(1));
+    ASSERT_EQ(expected_values[3], phi_of(3));
+    ASSERT_EQ(expected_values[4], phi_of(4));
+    ASSERT_EQ(expected_values[5], phi_of(5));
+    ASSERT_EQ(expected_values[7], phi_of(7));
+    auto actual_values_1 = phi(8, phi_strategy::sieve);
+    ASSERT_GE(expected_values.size(), actual_values_1.size());
+    for (int i = 0; i < actual_values_1.size(); i++) {
+        ASSERT_EQ(expected_values[i], actual_values_1[i]);
+    }
+    auto actual_values_2 = phi(6, phi_strategy::divisor_sum);
+    ASSERT_GE(expected_values.size(), actual_values_2.size());
+    for (int i = 0; i < actual_values_2.size(); i++) {
+        ASSERT_EQ(expected_values[i], actual_values_2[i]);
+    }
+}
+
+} // namespace mehara::mathematics::test
