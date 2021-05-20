@@ -38,7 +38,7 @@ TEST(mathematics, factorization_precomputed_primes)
     }
 }
 
-TEST(mathematics, gcd)
+TEST(mathematics, gcd_euclidean_algorithm)
 {
     ASSERT_EQ(1, gcd(71, 23));
     ASSERT_EQ(1, gcd(23, 71));
@@ -46,6 +46,29 @@ TEST(mathematics, gcd)
     ASSERT_EQ(4, gcd(20, 16));
     ASSERT_EQ(4, gcd(16, 20));
     ASSERT_EQ(9, gcd(90, 27));
+}
+
+TEST(mathematics, gcd_extended_euclidean_algorithm)
+{
+    int x, y;
+    ASSERT_EQ(1, gcd(71, 23, x, y));
+    ASSERT_EQ(-11, x);
+    ASSERT_EQ(34, y);
+    ASSERT_EQ(1, gcd(23, 71, x, y));
+    ASSERT_EQ(34, x);
+    ASSERT_EQ(-11, y);
+    ASSERT_EQ(1, gcd(37, 29, x, y));
+    ASSERT_EQ(11, x);
+    ASSERT_EQ(-14, y);
+    ASSERT_EQ(4, gcd(20, 16, x, y));
+    ASSERT_EQ(1, x);
+    ASSERT_EQ(-1, y);
+    ASSERT_EQ(4, gcd(16, 20, x, y));
+    ASSERT_EQ(-1, x);
+    ASSERT_EQ(1, y);
+    ASSERT_EQ(9, gcd(90, 27, x, y));
+    ASSERT_EQ(1, x);
+    ASSERT_EQ(-3, y);
 }
 
 TEST(mathematics, lcm)
