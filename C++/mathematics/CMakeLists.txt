@@ -1,1 +1,3 @@
-add_subdirectory(number_theory)
+add_subdirectory(
+    linear_algebra
+    number_theory)

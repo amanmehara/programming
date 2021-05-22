@@ -1,5 +1,7 @@
 #include "gtest/gtest.h"
 
+#include "../mathematics/linear_algebra/determinant.h"
+#include "../mathematics/linear_algebra/gauss_jordan_elimination.h"
 #include "../mathematics/number_theory/binary_exponentiation.h"
 #include "../mathematics/number_theory/factorization.h"
 #include "../mathematics/number_theory/gcd.h"
@@ -8,6 +10,39 @@
 #include "../mathematics/number_theory/totient_function.h"
 
 namespace mehara::mathematics::test {
+
+TEST(linalg, determinant)
+{
+    const double epsilon = 1E-9;
+    std::vector<std::vector<double>> matrix_1{{2, -1}, {1, 1}};
+    ASSERT_NEAR(3, linalg::compute_determinant(matrix_1), epsilon);
+    std::vector<std::vector<double>> matrix_2{{2, 1, 1}, {4, -6, 0}, {-2, 7, 2}};
+    ASSERT_NEAR(-16, linalg::compute_determinant(matrix_2), epsilon);
+    std::vector<std::vector<double>> matrix_3{{9}};
+    ASSERT_NEAR(9, linalg::compute_determinant(matrix_3), epsilon);
+    std::vector<std::vector<double>> matrix_4{{1, 2, 3}, {3, 4, 5}, {5, 6, 7}};
+    ASSERT_NEAR(0, linalg::compute_determinant(matrix_4), epsilon);
+}
+
+TEST(linalg, gauss_jordan_elimination)
+{
+    const double epsilon = 1E-9;
+    std::vector<std::vector<double>> matrix_1{{2, -1, 1}, {1, 1, 5}};
+    std::vector<double> actual_solution;
+    ASSERT_EQ(1, linalg::gauss_jordan_elimination(matrix_1, actual_solution));
+    ASSERT_NEAR(2, actual_solution[0], epsilon);
+    ASSERT_NEAR(3, actual_solution[1], epsilon);
+    std::vector<std::vector<double>> matrix_2{{2, 1, 1, 5}, {4, -6, 0, -2}, {-2, 7, 2, 9}};
+    ASSERT_EQ(1, linalg::gauss_jordan_elimination(matrix_2, actual_solution));
+    ASSERT_NEAR(1, actual_solution[0], epsilon);
+    ASSERT_NEAR(1, actual_solution[1], epsilon);    
+    ASSERT_NEAR(2, actual_solution[2], epsilon);
+    std::vector<std::vector<double>> matrix_3{{9, 27}};
+    ASSERT_EQ(1, linalg::gauss_jordan_elimination(matrix_3, actual_solution));
+    ASSERT_NEAR(3, actual_solution[0], epsilon);
+    std::vector<std::vector<double>> matrix_4{{1, 2, 3, 4}, {3, 4, 5, 6}, {5, 6, 7, 8}};
+    ASSERT_EQ(2, linalg::gauss_jordan_elimination(matrix_4, actual_solution));
+}
 
 TEST(mathematics, binary_exponentiation)
 {
