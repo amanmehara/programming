@@ -15,6 +15,8 @@
 #ifndef MEHARA_QUEUE_H_
 #define MEHARA_QUEUE_H_
 
+namespace mehara {
+
 template <class T>
 class queue {
   public:
@@ -28,5 +30,7 @@ class queue {
 
     virtual ~queue() {}
 };
+
+} // namespace mehara
 
 #endif // MEHARA_QUEUE_H_
