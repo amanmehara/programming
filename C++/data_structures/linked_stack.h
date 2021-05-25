@@ -19,6 +19,8 @@
 
 #include <stdexcept>
 
+namespace mehara {
+
 template <class T>
 class linked_stack : public stack<T> {
   public:
@@ -45,13 +47,15 @@ class linked_stack : public stack<T> {
 };
 
 template <class T>
-linked_stack<T>::linked_stack() {
+linked_stack<T>::linked_stack()
+{
     top_ = nullptr;
     size_ = 0;
 }
 
 template <class T>
-void linked_stack<T>::push(T element) {
+void linked_stack<T>::push(T element)
+{
     node* current = new node();
     current->element = element;
     current->next = top_;
@@ -60,32 +64,34 @@ void linked_stack<T>::push(T element) {
 }
 
 template <class T>
-T linked_stack<T>::pop() {
+T linked_stack<T>::pop()
+{
     if (size_ == 0) {
         throw std::underflow_error("Stack is already empty.");
     }
-
     node* current = top_;
     top_ = top_->next;
     T element = current->element;
     delete current;
     size_--;
-
     return element;
 }
 
 template <class T>
-bool linked_stack<T>::empty() {
+bool linked_stack<T>::empty()
+{
     return size_ == 0;
 }
 
 template <class T>
-int linked_stack<T>::size() {
+int linked_stack<T>::size()
+{
     return size_;
 }
 
 template <class T>
-linked_stack<T>::~linked_stack() {
+linked_stack<T>::~linked_stack()
+{
     while (top_) {
         node* current = top_;
         top_ = top_->next;
@@ -93,5 +99,7 @@ linked_stack<T>::~linked_stack() {
         size_--;
     }
 }
+
+} // namespace mehara
 
 #endif // MEHARA_LINKED_STACK_H_
