@@ -26,7 +26,7 @@ template <typename T>
 requires std::totally_ordered<T>
 class segment_tree {
   public:
-    segment_tree(const std::vector<T>& data, std::function<const T&(const T&, const T&)> function,
+    segment_tree(const std::vector<T>& data, std::function<T(const T&, const T&)> function,
                  T identity)
         : function_(function), identity_(identity)
     {
@@ -41,7 +41,7 @@ class segment_tree {
 
   private:
     std::vector<T> tree_;
-    std::function<const T&(const T&, const T&)> function_;
+    std::function<T(const T&, const T&)> function_;
     T identity_;
     int size_;
 
