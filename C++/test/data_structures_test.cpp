@@ -68,15 +68,15 @@ TEST(SegmentTreeTest, Sum)
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8};
     auto function = [](auto x, auto y) { return x + y; };
     segment_tree<int> tree(data, function, 0);
-    ASSERT_EQ(36, tree.query(0, data.size() - 1));
-    ASSERT_EQ(10, tree.query(0, 3));
-    ASSERT_EQ(13, tree.query(5, 6));
-    ASSERT_EQ(18, tree.query(2, 5));
+    ASSERT_EQ(tree.query(0, data.size() - 1), 36);
+    ASSERT_EQ(tree.query(0, 3), 10);
+    ASSERT_EQ(tree.query(5, 6), 13);
+    ASSERT_EQ(tree.query(2, 5), 18);
     tree.update(2, 9);
-    ASSERT_EQ(42, tree.query(0, data.size() - 1));
+    ASSERT_EQ(tree.query(0, data.size() - 1), 42);
     tree.update(5, 0);
     tree.update(6, 0);
-    ASSERT_EQ(0, tree.query(5, 6));
+    ASSERT_EQ(tree.query(5, 6), 0);
 }
 
 TEST(SegmentTreeTest, Multiply)
@@ -84,15 +84,15 @@ TEST(SegmentTreeTest, Multiply)
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8};
     auto function = [](auto x, auto y) { return x * y; };
     segment_tree<int> tree(data, function, 1);
-    ASSERT_EQ(40320, tree.query(0, data.size() - 1));
-    ASSERT_EQ(24, tree.query(0, 3));
-    ASSERT_EQ(42, tree.query(5, 6));
-    ASSERT_EQ(360, tree.query(2, 5));
+    ASSERT_EQ(tree.query(0, data.size() - 1), 40320);
+    ASSERT_EQ(tree.query(0, 3), 24);
+    ASSERT_EQ(tree.query(5, 6), 42);
+    ASSERT_EQ(tree.query(2, 5), 360);
     tree.update(2, 9);
-    ASSERT_EQ(120960, tree.query(0, data.size() - 1));
+    ASSERT_EQ(tree.query(0, data.size() - 1), 120960);
     tree.update(5, 0);
     tree.update(6, 0);
-    ASSERT_EQ(0, tree.query(5, 6));
+    ASSERT_EQ(tree.query(5, 6), 0);
 }
 
 TEST(SegmentTreeTest, Minimum)
@@ -100,15 +100,15 @@ TEST(SegmentTreeTest, Minimum)
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8};
     auto function = [](const int& x, const int& y) { return std::min(x, y); };
     segment_tree<int> tree(data, function, std::numeric_limits<int>::max());
-    ASSERT_EQ(1, tree.query(0, data.size() - 1));
-    ASSERT_EQ(1, tree.query(0, 3));
-    ASSERT_EQ(6, tree.query(5, 6));
-    ASSERT_EQ(3, tree.query(2, 5));
+    ASSERT_EQ(tree.query(0, data.size() - 1), 1);
+    ASSERT_EQ(tree.query(0, 3), 1);
+    ASSERT_EQ(tree.query(5, 6), 6);
+    ASSERT_EQ(tree.query(2, 5), 3);
     tree.update(2, 9);
-    ASSERT_EQ(1, tree.query(0, data.size() - 1));
+    ASSERT_EQ(tree.query(0, data.size() - 1), 1);
     tree.update(5, 0);
     tree.update(6, 0);
-    ASSERT_EQ(0, tree.query(5, 6));
+    ASSERT_EQ(tree.query(5, 6), 0);
 }
 
 TEST(SegmentTreeTest, Maximum)
@@ -116,15 +116,15 @@ TEST(SegmentTreeTest, Maximum)
     std::vector<int> data{1, 2, 3, 4, 5, 6, 7, 8};
     auto function = [](const int& x, const int& y) { return std::max(x, y); };
     segment_tree<int> tree(data, function, std::numeric_limits<int>::min());
-    ASSERT_EQ(8, tree.query(0, data.size() - 1));
-    ASSERT_EQ(4, tree.query(0, 3));
-    ASSERT_EQ(7, tree.query(5, 6));
-    ASSERT_EQ(6, tree.query(2, 5));
+    ASSERT_EQ(tree.query(0, data.size() - 1), 8);
+    ASSERT_EQ(tree.query(0, 3), 4);
+    ASSERT_EQ(tree.query(5, 6), 7);
+    ASSERT_EQ(tree.query(2, 5), 6);
     tree.update(2, 9);
-    ASSERT_EQ(9, tree.query(0, data.size() - 1));
+    ASSERT_EQ(tree.query(0, data.size() - 1), 9);
     tree.update(5, 0);
     tree.update(6, 0);
-    ASSERT_EQ(0, tree.query(5, 6));
+    ASSERT_EQ(tree.query(5, 6), 0);
 }
 
 } // namespace mehara::test
