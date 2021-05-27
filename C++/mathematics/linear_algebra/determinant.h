@@ -23,4 +23,4 @@ double compute_determinant(std::vector<std::vector<double>> matrix);
 
 } // namespace mehara::mathematics::linalg
 
-#endif MEHARA_DETERMINANT_H_
+#endif // MEHARA_DETERMINANT_H_

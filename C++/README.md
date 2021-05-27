@@ -3,6 +3,7 @@
 ## Data Structures
 * Stack
 * Queue
+* Segment Tree
 
 ## Mathematics
 ### Linear Algebra
