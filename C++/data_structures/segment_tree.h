@@ -16,14 +16,12 @@
 #define MEHARA_SEGMENT_TREE_H_
 
 #include <algorithm>
-#include <concepts>
 #include <functional>
 #include <vector>
 
 namespace mehara {
 
 template <typename T>
-requires std::totally_ordered<T>
 class segment_tree {
   public:
     segment_tree(const std::vector<T>& data, std::function<T(const T&, const T&)> function,
