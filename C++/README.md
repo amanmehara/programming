@@ -32,6 +32,10 @@
 ## Randomized Algorithms
 * Fisher–Yates shuffle
 
+## Search Algorithms
+* Binary Search _(Recursive and Iterative Implementations)_
+* Linear Search
+
 ## Sorting Algorithms
 * Bubble Sort
 * Heap Sort
