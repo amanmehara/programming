@@ -1,4 +1,4 @@
-// Copyright 2019 Aman Mehara
+// Copyright 2018 Aman Mehara
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,23 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "insertion_sort.h"
+#ifndef MEHARA_QUEUE_H_
+#define MEHARA_QUEUE_H_
 
-#include <vector>
+namespace mehara {
 
-namespace mehara::sort {
+template <class T>
+class queue {
+  public:
+    virtual void enqueue(T element) = 0;
 
-void insertion_sort(std::vector<double>& array) {
+    virtual T dequeue() = 0;
 
-    for (auto outer_index = 1; outer_index < array.size(); outer_index++) {
-        auto key = array[outer_index];
-        auto inner_index = outer_index - 1;
-        while (inner_index >= 0 && array[inner_index] > key) {
-            array[inner_index + 1] = array[inner_index];
-            inner_index = inner_index - 1;
-        }
-        array[inner_index + 1] = key;
-    }
-}
+    virtual bool empty() = 0;
 
-} // namespace mehara::sort
+    virtual int size() = 0;
+
+    virtual ~queue() {}
+};
+
+} // namespace mehara
+
+#endif // MEHARA_QUEUE_H_

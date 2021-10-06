@@ -1,5 +1,4 @@
 #include "gtest/gtest.h"
-#include <iostream>
 #include <vector>
 
 #include "../randomized_algorithms/fisher_yates_shuffle.h"

@@ -12,27 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_LINKED_QUEUE_H_
-#define MEHARA_LINKED_QUEUE_H_
+#ifndef MEHARA_LINKED_STACK_H_
+#define MEHARA_LINKED_STACK_H_
 
-#include "queue.h"
+#include "stack.h"
 
 #include <stdexcept>
 
+namespace mehara {
+
 template <class T>
-class linked_queue : public queue<T> {
+class linked_stack : public stack<T> {
   public:
-    linked_queue();
+    linked_stack();
 
-    void enqueue(T element) override;
+    void push(T element) override;
 
-    T dequeue() override;
+    T pop() override;
 
     bool empty() override;
 
     int size() override;
 
-    ~linked_queue() override;
+    ~linked_stack() override;
 
   private:
     struct node {
@@ -40,72 +42,64 @@ class linked_queue : public queue<T> {
         node* next;
     };
 
-    node* head_;
-    node* tail_;
+    node* top_;
     int size_;
 };
 
 template <class T>
-linked_queue<T>::linked_queue() {
-    tail_ = nullptr;
-    head_ = tail_;
+linked_stack<T>::linked_stack()
+{
+    top_ = nullptr;
     size_ = 0;
 }
 
 template <class T>
-void linked_queue<T>::enqueue(T element) {
+void linked_stack<T>::push(T element)
+{
     node* current = new node();
     current->element = element;
-
-    if (size_ == 0) {
-        tail_ = current;
-        head_ = tail_;
-    } else {
-        tail_->next = current;
-        tail_ = current;
-    }
-
+    current->next = top_;
+    top_ = current;
     size_++;
 }
 
 template <class T>
-T linked_queue<T>::dequeue() {
+T linked_stack<T>::pop()
+{
     if (size_ == 0) {
-        throw std::underflow_error("Queue is already empty.");
+        throw std::underflow_error("Stack is already empty.");
     }
-
-    node* current = head_;
-    head_ = head_->next;
+    node* current = top_;
+    top_ = top_->next;
     T element = current->element;
     delete current;
     size_--;
-
-    if (size_ == 0) {
-        tail_ = nullptr;
-    }
-
     return element;
 }
 
 template <class T>
-bool linked_queue<T>::empty() {
+bool linked_stack<T>::empty()
+{
     return size_ == 0;
 }
 
 template <class T>
-int linked_queue<T>::size() {
+int linked_stack<T>::size()
+{
     return size_;
 }
 
 template <class T>
-linked_queue<T>::~linked_queue() {
-    while (head_) {
-        node* current = head_;
-        head_ = head_->next;
+linked_stack<T>::~linked_stack()
+{
+    while (top_) {
+        node* current = top_;
+        top_ = top_->next;
         delete current;
         size_--;
     }
-    tail_ = head_;
 }
 
-#endif // MEHARA_LINKED_QUEUE_H_
+} // namespace mehara
+
+#endif // MEHARA_LINKED_STACK_H_

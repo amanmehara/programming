@@ -1,4 +1,4 @@
-// Copyright 2019 Aman Mehara
+// Copyright 2021 Aman Mehara
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,25 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "bubble_sort.h"
+#ifndef MEHARA_LCM_H_
+#define MEHARA_LCM_H_
 
-#include <algorithm>
-#include <vector>
+#include "gcd.h"
 
-namespace mehara::sort {
+namespace mehara::mathematics {
 
-void bubble_sort(std::vector<double>& array) {
+int lcm(int a, int b) { return a / gcd(a, b) * b; }
 
-    auto swapped = false;
-    do {
-        swapped = false;
-        for (auto index = 0; index < array.size() - 1; index++) {
-            if (array[index] > array[index + 1]) {
-                std::swap(array[index], array[index + 1]);
-                swapped = true;
-            }
-        }
-    } while (swapped == true);
-}
+} // namespace mehara::mathematics
 
-} // namespace mehara::sort
+#endif // MEHARA_LCM_H_

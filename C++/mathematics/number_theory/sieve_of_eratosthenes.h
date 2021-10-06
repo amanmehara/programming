@@ -1,4 +1,4 @@
-// Copyright 2019 Aman Mehara
+// Copyright 2021 Aman Mehara
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,29 +12,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_INSERTON_SORT_H_
-#define MEHARA_INSERTON_SORT_H_
+#ifndef MEHARA_SIEVE_OF_ERATOSTHENES_H_
+#define MEHARA_SIEVE_OF_ERATOSTHENES_H_
 
 #include <concepts>
 #include <vector>
 
-namespace mehara::sort {
+namespace mehara::mathematics {
 
 template <typename T>
-requires std::totally_ordered<T>
-void insertion_sort(std::vector<T>& array)
+requires std::integral<T> 
+std::vector<char> sieve_of_eratosthenes(T number)
 {
-    for (auto outer_index = 1; outer_index < array.size(); outer_index++) {
-        auto key = array[outer_index];
-        auto inner_index = outer_index - 1;
-        while (inner_index >= 0 && array[inner_index] > key) {
-            array[inner_index + 1] = array[inner_index];
-            inner_index = inner_index - 1;
+    std::vector<char> is_prime(number + 1, true);
+    is_prime[0] = is_prime[1] = false;
+    for (T i = 2; i * i <= number; i++) {
+        if (is_prime[i]) {
+            for (T j = i * 2; j <= number; j += i) {
+                is_prime[j] = false;
+            }
         }
-        array[inner_index + 1] = key;
     }
+    return is_prime;
 }
 
-} // namespace mehara::sort
+} // namespace mehara::mathematics
 
-#endif // MEHARA_INSERTON_SORT_H_
+#endif // MEHARA_SIEVE_OF_ERATOSTHENES_H_

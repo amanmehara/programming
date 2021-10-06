@@ -1,4 +1,4 @@
-// Copyright 2018 Aman Mehara
+// Copyright 2021 Aman Mehara
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,21 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_QUEUE_H_
-#define MEHARA_QUEUE_H_
+#ifndef MEHARA_GAUSS_JORDAN_ELIMINATION_H_
+#define MEHARA_GAUSS_JORDAN_ELIMINATION_H_
 
-template <class T>
-class queue {
-  public:
-    virtual void enqueue(T element) = 0;
+#include <vector>
 
-    virtual T dequeue() = 0;
+namespace mehara::mathematics::linalg {
 
-    virtual bool empty() = 0;
+int gauss_jordan_elimination(std::vector<std::vector<double>> augmented_matrix,
+                             std::vector<double>& solution);
 
-    virtual int size() = 0;
+} // namespace mehara::mathematics::linalg
 
-    virtual ~queue() {}
-};
-
-#endif // MEHARA_QUEUE_H_
+#endif // MEHARA_GAUSS_JORDAN_ELIMINATION_H_

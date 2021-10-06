@@ -15,6 +15,8 @@
 #ifndef MEHARA_STACK_H_
 #define MEHARA_STACK_H_
 
+namespace mehara {
+
 template <class T>
 class stack {
   public:
@@ -28,5 +30,7 @@ class stack {
 
     virtual ~stack() {}
 };
+
+} // namespace mehara
 
 #endif // MEHARA_STACK_H_

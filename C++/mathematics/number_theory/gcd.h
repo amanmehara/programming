@@ -1,4 +1,4 @@
-// Copyright 2019 Aman Mehara
+// Copyright 2021 Aman Mehara
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,31 +12,41 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef MEHARA_BUBBLE_SORT_H_
-#define MEHARA_BUBBLE_SORT_H_
+#ifndef MEHARA_GCD_H_
+#define MEHARA_GCD_H_
 
-#include <algorithm>
 #include <concepts>
-#include <vector>
 
-namespace mehara::sort {
+namespace mehara::mathematics {
 
+/// Euclidean Algorithm
 template <typename T>
-requires std::totally_ordered<T>
-void bubble_sort(std::vector<T>& array)
+requires std::integral<T> 
+T gcd(T a, T b)
 {
-    auto swapped = false;
-    do {
-        swapped = false;
-        for (auto index = 0; index < array.size() - 1; index++) {
-            if (array[index] > array[index + 1]) {
-                std::swap(array[index], array[index + 1]);
-                swapped = true;
-            }
-        }
-    } while (swapped == true);
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
 }
 
-} // namespace mehara::sort
+/// Extended Euclidean ALgorithm
+template <typename T>
+requires std::integral<T> 
+T gcd(T a, T b, T& x, T& y)
+{
+    if (b == 0) {
+        x = 1;
+        y = 0;
+        return a;
+    }
+    T x1, y1;
+    auto d = gcd(b, a % b, x1, y1);
+    x = y1;
+    y = x1 - y1 * (a / b);
+    return d;
+}
 
-#endif // MEHARA_BUBBLE_SORT_H_
+} // namespace mehara::mathematics
+
+#endif // MEHARA_GCD_H_
