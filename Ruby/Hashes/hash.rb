@@ -18,6 +18,25 @@ days = {"1" => "Sunday", "2" => "Monday"}
 
 days["1"] or days["2"]
 
+# To check if a key is present, use
+
+days.key?("1") # true
+days.key?("3") # false
+
 # To list out all the keys, use
 
 days.keys
+
+# To list out all the values, use
+
+days.values
+
+days = {"1" => "Sunday", "2" => "Monday", "3" => nil}
+
+# To remove nil values/keys, use
+
+days.compact
+
+# To remove all values/keys, use
+
+days.clear
