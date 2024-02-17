@@ -30,7 +30,7 @@ T gcd(T a, T b)
     return gcd(b, a % b);
 }
 
-/// Extended Euclidean ALgorithm
+/// Extended Euclidean Algorithm
 template <typename T>
 requires std::integral<T> 
 T gcd(T a, T b, T& x, T& y)
