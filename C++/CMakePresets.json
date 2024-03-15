@@ -1,9 +1,9 @@
 {
-  "version": 3,
+  "version": 5,
   "configurePresets": [
     {
       "name": "linux",
-      "displayName": "GCC 12.1.0",
+      "displayName": "GCC 12",
       "description": "Using compilers: C = /usr/bin/gcc-12, CXX = /usr/bin/g++-12",
       "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
