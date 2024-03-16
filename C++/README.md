@@ -44,3 +44,6 @@
 * Merge Sort
 * Quick Sort
 * Selection Sort
+
+## String Algorithms
+* Rabin-Karp Algorithm
