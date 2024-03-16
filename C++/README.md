@@ -15,6 +15,7 @@
 * GCD _(Euclidean Algorithm)_
 * GCD and Coefficients of Bézout's identity _(Extended Euclidean Algorithm)_
 * LCM
+* Modular Exponantiation
 * Prime Numbers [1 → N] _(Sieve of Eratosthenes)_
 * Prime Factorization _(Trial Division)_
 * Prime Factorization _(Precomputed Primes)_

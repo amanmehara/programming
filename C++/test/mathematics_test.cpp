@@ -2,7 +2,7 @@
 
 #include "../mathematics/linear_algebra/determinant.h"
 #include "../mathematics/linear_algebra/gauss_jordan_elimination.h"
-#include "../mathematics/number_theory/binary_exponentiation.h"
+#include "../mathematics/number_theory/exponentiation.h"
 #include "../mathematics/number_theory/factorization.h"
 #include "../mathematics/number_theory/gcd.h"
 #include "../mathematics/number_theory/lcm.h"
@@ -50,6 +50,18 @@ TEST(mathematics, binary_exponentiation)
     ASSERT_EQ(243, binary_exponentiation_recursive(3, 5));
     ASSERT_EQ(256, binary_exponentiation_iterative(2, 8));
     ASSERT_EQ(243, binary_exponentiation_iterative(3, 5));
+    ASSERT_EQ(256, binary_exponentiation(2, 8));
+    ASSERT_EQ(243, binary_exponentiation(3, 5));
+}
+
+TEST(mathematics, modular_exponentiation)
+{
+    ASSERT_EQ(4, modular_exponentiation_recursive(2, 8, 7));
+    ASSERT_EQ(1, modular_exponentiation_recursive(3, 5, 11));
+    ASSERT_EQ(4, modular_exponentiation_iterative(2, 8, 7));
+    ASSERT_EQ(1, modular_exponentiation_iterative(3, 5, 11));
+    ASSERT_EQ(4, modular_exponentiation(2, 8, 7));
+    ASSERT_EQ(1, modular_exponentiation(3, 5, 11));
 }
 
 TEST(mathematics, factorization_trial_division)

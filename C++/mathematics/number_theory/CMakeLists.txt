@@ -1,6 +1,6 @@
 target_sources(programming
     PRIVATE
-    binary_exponentiation.h
+    exponentiation.h
     factorization.h
     gcd.h
     lcm.h
