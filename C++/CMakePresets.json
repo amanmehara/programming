@@ -3,15 +3,15 @@
   "configurePresets": [
     {
       "name": "linux",
-      "displayName": "GCC 12",
-      "description": "Using compilers: C = /usr/bin/gcc-12, CXX = /usr/bin/g++-12",
+      "displayName": "GCC 14",
+      "description": "Using compilers: C = /usr/bin/gcc-14, CXX = /usr/bin/g++-14",
       "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-        "CMAKE_C_COMPILER": "/usr/bin/gcc-12",
-        "CMAKE_CXX_COMPILER": "/usr/bin/g++-12"
+        "CMAKE_C_COMPILER": "/usr/bin/gcc-14",
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++-14"
       }
     }
   ]
