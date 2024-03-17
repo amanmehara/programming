@@ -46,4 +46,5 @@
 * Selection Sort
 
 ## String Algorithms
+* Knuth–Morris–Pratt _(KMP)_ Algorithm
 * Rabin-Karp Algorithm
