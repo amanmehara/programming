@@ -5,6 +5,9 @@
 * Queue
 * Segment Tree
 
+# Graph Algorithms
+* Topological Sort _(Depth-First Search)_
+
 ## Mathematics
 ### Linear Algebra
 * Compute Determinant _(Gaussian Elimination)_

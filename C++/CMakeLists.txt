@@ -18,6 +18,7 @@ set_target_properties(programming PROPERTIES LINKER_LANGUAGE CXX)
 
 enable_testing()
 add_subdirectory(data_structures)
+add_subdirectory(graph_algorithms)
 add_subdirectory(mathematics)
 add_subdirectory(randomized_algorithms)
 add_subdirectory(search)
