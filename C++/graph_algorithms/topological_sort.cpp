@@ -46,10 +46,45 @@ void dfs(int vertex, const vector<vector<int>>& adjacency_list,
 
 deque<int> dfs_topological_sort(const vector<vector<int>>& adjacency_list)
 {
-    vector<int> colors(adjacency_list.size());
+    int n = adjacency_list.size();
+    vector<int> colors(n);
     deque<int> order;
-    for (int i = 0; i < adjacency_list.size(); i++) {
+    for (int i = 0; i < n; i++) {
         dfs(i, adjacency_list, colors, order);
+    }
+    return order;
+}
+
+deque<int>
+kahns_algorithm_topological_sort(const vector<vector<int>>& adjacency_list)
+{
+    int n = adjacency_list.size();
+    deque<int> order;
+    vector<int> indegrees(n);
+    for (int i = 0; i < n; i++) {
+        for (const auto& neighbour : adjacency_list[i]) {
+            indegrees[neighbour]++;
+        }
+    }
+    deque<int> q;
+    for (int i = 0; i < n; i++) {
+        if (indegrees[i] == 0) {
+            q.push_back(i);
+        }
+    }
+    while (!q.empty()) {
+        int vertex = q.front();
+        q.pop_front();
+        order.push_back(vertex);
+        for (const auto& neighbour : adjacency_list[vertex]) {
+            indegrees[neighbour]--;
+            if (indegrees[neighbour] == 0) {
+                q.push_back(neighbour);
+            }
+        }
+    }
+    if (order.size() != n) {
+        throw logic_error("Graph has at least one cycle.");
     }
     return order;
 }

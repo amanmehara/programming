@@ -23,6 +23,9 @@ namespace mehara::graph {
 std::deque<int>
 dfs_topological_sort(const std::vector<std::vector<int>>& adjacency_list);
 
-}
+std::deque<int> kahns_algorithm_topological_sort(
+    const std::vector<std::vector<int>>& adjacency_list);
+
+} // namespace mehara::graph
 
 #endif // MEHARA_TOPOLOGICAL_SORT_H_

@@ -7,6 +7,7 @@
 
 # Graph Algorithms
 * Topological Sort _(Depth-First Search)_
+* Topological Sort _(Kahn's Algorithm)_
 
 ## Mathematics
 ### Linear Algebra
